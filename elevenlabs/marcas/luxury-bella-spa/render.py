@@ -180,7 +180,7 @@ def draw_captions(cv, t):
         fade = 1 - ease(ramp(t, b - .14, b)) if b < 98 else 1
         gap = -68 + 20
         total = sum(im.width for _, im in imgs) + gap * (len(imgs) - 1)
-        x = W/2 - total/2; y = int(H*0.855)
+        x = W/2 - total/2; y = int(H*CAP_Y)
         for st, im in imgs:
             p = eout(ramp(t, st - .06, st + .22))
             if p > 0:
@@ -239,7 +239,8 @@ def shine(img, p):
     hl = Image.fromarray(np.dstack([np.full((h, w, 3), 255), a*255]).astype(np.uint8), "RGBA")
     return Image.alpha_composite(img, hl)
 
-grad_bot = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.clip((np.linspace(0, 1, H) - .60) / .40, 0, 1)**1.3 * 205)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
+CAP_Y = 0.665  # subtítulos sobre la persona, fuera de la zona del pie de foto de Instagram
+grad_bot = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.exp(-((np.linspace(0, 1, H) - CAP_Y) / .055)**2) * 150)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
 grad_top = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.clip((.16 - np.linspace(0, 1, H)) / .16, 0, 1)**1.5 * 120)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
 frame_m = Image.new("L", (W, H)); ImageDraw.Draw(frame_m).rounded_rectangle((34, 34, W-35, H-35), 28, outline=255, width=2)
 frame_gold = gold_fill(W, H).convert("RGBA"); frame_gold.putalpha(frame_m)
