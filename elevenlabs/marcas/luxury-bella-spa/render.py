@@ -159,8 +159,14 @@ EN = [("A happy client", 0, 2), ("is so much more than", 3, 6), ("a booking to u
       ("on Google", 58, 59)]
 KEY = {"happy", "booking", "luxury", "bella", "spa", "visit", "referral", "choose", "self-care", "beauty",
        "community", "experience", "review", "google"}
+LANG = "es"   # "es" = palabras reales con su tiempo exacto; "en" = traducción EN
+KEY_ES = {"feliz", "reserva", "luxury", "bella", "spa", "visita,", "recomendación", "elegirnos.", "cuidado",
+          "belleza.", "comunidad", "ti.", "experiencia", "opinión", "google"}
 chunks = []
 for txt, i0, i1 in EN:
+    if LANG == "es":
+        chunks.append([dict(w, key=w["text"].lower() in KEY_ES) for w in words[i0:i1 + 1]])
+        continue
     t0, t1 = words[i0]["start"], max(words[i1]["start"], words[i1]["end"] - .25)
     ws = txt.split()
     chunks.append([{"text": w, "start": t0 + (t1 - t0) * k / max(len(ws) - 1, 1), "end": words[i1]["end"]}
@@ -176,7 +182,7 @@ cap = []
 for k, ch in enumerate(chunks):
     imgs = []
     for w in ch:
-        key = w["text"].strip(".,").lower() in KEY
+        key = w.get("key", w["text"].strip(".,").lower() in KEY)
         im = colorize(cap_mask(w["text"], F_CAPI if key else F_CAP), "gold" if key else IVORY)
         imgs.append((w["start"], im))
     a = ch[0]["start"] - .08
@@ -251,8 +257,8 @@ def shine(img, p):
     return Image.alpha_composite(img, hl)
 
 CAP_Y = 0.37   # subtítulos sobre la cabeza (entre la cabecera/paneles y el pelo), fuera del pie de Instagram
-grad_bot = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.exp(-((np.linspace(0, 1, H) - CAP_Y) / .055)**2) * 150)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
-grad_top = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.clip((.16 - np.linspace(0, 1, H)) / .16, 0, 1)**1.5 * 120)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
+grad_bot = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.exp(-((np.linspace(0, 1, H) - CAP_Y) / .055)**2) * 120)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
+grad_top = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.clip((.16 - np.linspace(0, 1, H)) / .16, 0, 1)**1.5 * 85)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
 frame_m = Image.new("L", (W, H)); ImageDraw.Draw(frame_m).rounded_rectangle((34, 34, W-35, H-35), 28, outline=255, width=2)
 frame_gold = gold_fill(W, H).convert("RGBA"); frame_gold.putalpha(frame_m)
 
@@ -377,9 +383,9 @@ def compose(base, t, last_frame):
 # ---------- pipeline ffmpeg ----------
 src_dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", SRC]))
 DUR = src_dur + HOLD
-grade = ("fps=30,scale=1080:1920:flags=lanczos,eq=contrast=1.05:brightness=0.005:saturation=0.93,"
+grade = ("fps=30,scale=1080:1920:flags=lanczos,eq=contrast=1.04:brightness=0.045:gamma=1.10:saturation=1.06,"
          "colorbalance=rs=0.015:gs=0.005:bs=-0.02:rh=0.025:gh=0.01:bh=-0.03,unsharp=5:5:0.4,"
-         f"vignette=PI/6,tpad=stop_mode=clone:stop_duration={HOLD}")
+         f"vignette=PI/9,tpad=stop_mode=clone:stop_duration={HOLD}")
 dec = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-i", SRC, "-vf", grade, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
                        stdout=subprocess.PIPE)
 enc = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
