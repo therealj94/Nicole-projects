@@ -136,6 +136,7 @@ words = [w for w in json.load(open(TRANS))["words"] if w["type"] == "word"]
 import os
 CFG = os.environ.get("CFG") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "v01_gracias.py")
 INTRO_BIG, ANCHOR, CAP_Y, HEADER_SHINE, LEAK = True, (0.5, 0.5), 0.37, [], []
+BROLL, INSETS, INSET_S, INSET_DX, REVEAL_C = [], [], 0.80, 150, (0.5, 0.68)
 exec(open(CFG).read())
 for w in words: w["text"] = FIX.get(w["text"], w["text"])
 chunks = [[dict(w, key=w["text"].lower() in KEY_ES) for w in words[r[-2]:r[-1] + 1]] for r in SUBS]
@@ -209,6 +210,84 @@ def draw_particles(cv, t, a0, a1):
         tw = 0.55 + 0.45 * math.sin(t*3 + ph)
         paste_c(cv, BOK[int(r)], xx_, yy_, s * tw * .8)
 
+
+# ---------- tomas de apoyo (B-roll) con la persona recortada al frente ----------
+GRADE_BR = ("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,"
+            "eq=contrast=1.04:brightness=0.05:gamma=1.10:saturation=1.08,"
+            "colorbalance=rs=0.015:gs=0.005:bs=-0.02:rh=0.025:gh=0.01:bh=-0.03,unsharp=5:5:0.4")
+XF = 0.4   # duración de transiciones
+
+class BRollReader:
+    def __init__(self, path, src, t0, t1):
+        self.path, self.src, self.t0, self.t1 = path, src, t0 - XF, t1 + XF
+        self.p, self.idx, self.frame = None, -1, None
+    def get(self, t):
+        if not (self.t0 <= t <= self.t1): return None
+        if self.p is None:
+            self.p = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-ss", str(self.src), "-i", self.path, "-an",
+                                       "-vf", GRADE_BR, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+        want = int(round((t - self.t0) * FPS))
+        while self.idx < want:
+            buf = self.p.stdout.read(W * H * 3)
+            if len(buf) < W * H * 3: break
+            self.frame = Image.frombytes("RGB", (W, H), buf); self.idx += 1
+        if self.frame is None: return None
+        z = 1.04 + 0.06 * ramp(t, self.t0, self.t1)          # empuje lento
+        cw, ch = W / z, H / z
+        return self.frame.resize((W, H), Image.BICUBIC, box=((W-cw)/2, (H-ch)/2, (W+cw)/2, (H+ch)/2))
+
+_seg, _mprev = None, None
+def person_mask(img):
+    global _seg, _mprev
+    if _seg is None:
+        import mediapipe as mp
+        from mediapipe.tasks.python import vision, BaseOptions
+        _seg = (mp, vision.ImageSegmenter.create_from_options(vision.ImageSegmenterOptions(
+            base_options=BaseOptions(model_asset_path=os.environ.get("SEG_MODEL", "/tmp/x/selfie_multiclass.tflite")),
+            output_confidence_masks=True)))
+    mp, sg = _seg
+    small = np.ascontiguousarray(np.array(img.resize((540, 960), Image.BILINEAR)))
+    bg = sg.segment(mp.Image(image_format=mp.ImageFormat.SRGB, data=small)).confidence_masks[0].numpy_view()
+    m = np.clip(((1 - bg.reshape(960, 540)) - .3) / .4, 0, 1)
+    if _mprev is not None: m = .65 * m + .35 * _mprev
+    _mprev = m
+    return Image.fromarray((m * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR).filter(ImageFilter.GaussianBlur(2))
+
+def inset_amount(t):
+    return max([window(t, a, b, .5, .5) for a, b in INSETS] + [0])
+
+ryy, rxx = np.mgrid[0:H//4, 0:W//4]
+RD = np.sqrt((rxx - W//4 * REVEAL_C[0])**2 + (ryy - H//4 * REVEAL_C[1])**2) / (H//4)
+def reveal_mask(p):
+    a = np.clip((p * 1.25 - RD) / .12, 0, 1)
+    return Image.fromarray((a * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR)
+
+READERS = [BRollReader(*b) for b in BROLL]
+def broll_layer(t):
+    out = None
+    for r in READERS:
+        f = r.get(t)
+        if f is None: continue
+        a = ease(ramp(t, r.t0, r.t0 + XF))       # fundido de entrada (sobre la toma anterior)
+        out = f if out is None or a >= 1 else Image.blend(out, f, a)
+    return out
+
+def apply_broll(base, t):
+    k = inset_amount(t)
+    if k <= 0: return base
+    bl = broll_layer(t)
+    if bl is None: return base
+    mask = person_mask(base)
+    bg = Image.composite(bl, base, reveal_mask(k))
+    s = 1 - (1 - INSET_S) * ease(k); dx = INSET_DX * ease(k)
+    nw, nh = int(W * s), int(H * s)
+    spk = base.resize((nw, nh), Image.BICUBIC); mk = mask.resize((nw, nh), Image.BILINEAR)
+    ox, oy = int((W - nw) / 2 + dx), H - nh
+    sh = Image.new("L", (W, H)); sh.paste(mk.point(lambda v: int(v * .55 * k)), (ox - 18, oy + 10))
+    bg = Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), bg, sh.filter(ImageFilter.GaussianBlur(26)))
+    bg.paste(spk, (ox, oy), mk)
+    return bg
+
 # ---------- composición por cuadro ----------
 def shine(img, p):
     """Barrido de brillo diagonal sobre un RGBA (p de 0 a 1)."""
@@ -246,6 +325,7 @@ def compose(base, t, last_frame):
         cw, ch = W / z, H / z
         x0 = (W - cw) * ANCHOR[0]; y0 = (H - ch) * ANCHOR[1]
         base = base.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + cw, y0 + ch))
+    if INSETS: base = apply_broll(base, t)
     cv = base.convert("RGBA")
 
     # tarjeta final: desenfoque + oscurecido
