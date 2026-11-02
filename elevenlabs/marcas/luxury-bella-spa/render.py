@@ -166,12 +166,13 @@ def draw_captions(cv, t):
         fade = 1 - ease(ramp(t, b - .14, b)) if b < 98 else 1
         gap = -68 + 20
         total = sum(im.width for _, im in imgs) + gap * (len(imgs) - 1)
-        x = W/2 - total/2; y = int(H*CAP_Y)
+        sc = min(1.0, 940 / total)                     # frases largas: se reducen para no salirse
+        x = W/2 - total*sc/2; y = int(H*CAP_Y)
         for st, im in imgs:
             p = eout(ramp(t, st - .06, st + .22))
             if p > 0:
-                paste_c(cv, im, x + im.width/2, y + (1-p)*18, p*fade)
-            x += im.width + gap
+                paste_c(cv, im, x + im.width*sc/2, y + (1-p)*18, p*fade, sc)
+            x += (im.width + gap) * sc
 
 # ---------- capa de luz (light leak) ----------
 yy, xx = np.mgrid[0:H//4, 0:W//4]
