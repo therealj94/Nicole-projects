@@ -149,11 +149,22 @@ for w in words: w["text"] = FIX.get(w["text"], w["text"])
 CHUNKS = [3, 4, 4, 4, 3, 2, 4, 3, 3, 4, 3, 3, 2, 4, 3, 4, 3, 3, 2]  # palabras por bloque
 KEY = {"feliz", "reserva", "luxury", "bella", "spa", "visita", "recomendación", "elegirnos", "cuidado", "belleza",
        "comunidad", "ti", "experiencia", "opinión", "google", "vuelves"}
-chunks, i = [], 0
-for n in CHUNKS:
-    if i >= len(words): break
-    chunks.append(words[i:i+n]); i += n
-if i < len(words): chunks.append(words[i:])
+# Subtítulos en inglés: (texto, índice primera palabra ES, índice última palabra ES) para el tiempo
+EN = [("A happy client", 0, 2), ("is so much more than", 3, 6), ("a booking to us.", 7, 10),
+      ("At Luxury Bella Spa", 11, 14), ("we value every visit,", 15, 17), ("every referral", 18, 19),
+      ("and every time", 20, 23), ("you choose us again.", 24, 26), ("Thank you for letting us", 27, 29),
+      ("be part of your", 30, 33), ("moments of self-care", 34, 36), ("and beauty.", 37, 38),
+      ("Our community", 39, 40), ("grows thanks to you.", 41, 44), ("If you've had", 45, 47),
+      ("an experience with us,", 48, 51), ("we'd love for you", 52, 54), ("to share your review", 55, 57),
+      ("on Google", 58, 59)]
+KEY = {"happy", "booking", "luxury", "bella", "spa", "visit", "referral", "choose", "self-care", "beauty",
+       "community", "experience", "review", "google"}
+chunks = []
+for txt, i0, i1 in EN:
+    t0, t1 = words[i0]["start"], max(words[i1]["start"], words[i1]["end"] - .25)
+    ws = txt.split()
+    chunks.append([{"text": w, "start": t0 + (t1 - t0) * k / max(len(ws) - 1, 1), "end": words[i1]["end"]}
+                   for k, w in enumerate(ws)])
 F_CAP, F_CAPI = f_corm(84, 600), f_cormi(88, 600)
 CAP_ASC = max(F_CAP.getmetrics()[0], F_CAPI.getmetrics()[0]); CAP_H = CAP_ASC + max(F_CAP.getmetrics()[1], F_CAPI.getmetrics()[1]) + 8
 def cap_mask(txt, f):
@@ -239,7 +250,7 @@ def shine(img, p):
     hl = Image.fromarray(np.dstack([np.full((h, w, 3), 255), a*255]).astype(np.uint8), "RGBA")
     return Image.alpha_composite(img, hl)
 
-CAP_Y = 0.665  # subtítulos sobre la persona, fuera de la zona del pie de foto de Instagram
+CAP_Y = 0.37   # subtítulos sobre la cabeza (entre la cabecera/paneles y el pelo), fuera del pie de Instagram
 grad_bot = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.exp(-((np.linspace(0, 1, H) - CAP_Y) / .055)**2) * 150)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
 grad_top = Image.fromarray(np.dstack([np.zeros((H, W, 3)), (np.clip((.16 - np.linspace(0, 1, H)) / .16, 0, 1)**1.5 * 120)[:, None].repeat(W, 1)]).astype(np.uint8), "RGBA")
 frame_m = Image.new("L", (W, H)); ImageDraw.Draw(frame_m).rounded_rectangle((34, 34, W-35, H-35), 28, outline=255, width=2)
@@ -293,11 +304,11 @@ def compose(base, t, last_frame):
     if t < 2.2:
         a = eout(ramp(t, .1, .7)) * (1 - ease(ramp(t, 1.15, 1.6)))
         sc = 1.06 - .06 * eout(ramp(t, .1, 1.2))
-        paste_c(cv, shine(brand_big, ramp(t, .5, 1.3)), W/2, H*0.45, a, sc)
+        paste_c(cv, shine(brand_big, ramp(t, .5, 1.3)), W/2, H*0.53, a, sc)
         lw = eout(ramp(t, .25, 1.0))
-        paste_c(cv, line_long.resize((max(1, int(520*lw)), line_long.height)), W/2, H*0.45 - 80, a)
-        paste_c(cv, line_long.resize((max(1, int(520*lw)), line_long.height)), W/2, H*0.45 + 70, a)
-        paste_c(cv, sub_intro, W/2, H*0.45 + 135, a * eout(ramp(t, .45, .95)))
+        paste_c(cv, line_long.resize((max(1, int(520*lw)), line_long.height)), W/2, H*0.53 - 80, a)
+        paste_c(cv, line_long.resize((max(1, int(520*lw)), line_long.height)), W/2, H*0.53 + 70, a)
+        paste_c(cv, sub_intro, W/2, H*0.53 + 135, a * eout(ramp(t, .45, .95)))
     # cabecera persistente
     hd = eout(ramp(t, 1.35, 1.95)) * (1 - e)
     if hd > 0:
