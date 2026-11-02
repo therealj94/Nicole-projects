@@ -137,6 +137,7 @@ import os
 CFG = os.environ.get("CFG") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "v01_gracias.py")
 INTRO_BIG, ANCHOR, CAP_Y, HEADER_SHINE, LEAK = True, (0.5, 0.5), 0.37, [], []
 BROLL, INSETS, INSET_S, INSET_DX, REVEAL_C = [], [], 0.80, 150, (0.5, 0.68)
+PRE_FX, BG_FX = None, None   # efectos sobre la persona / fondo generado
 exec(open(CFG).read())
 for w in words: w["text"] = FIX.get(w["text"], w["text"])
 chunks = [[dict(w, key=w["text"].lower() in KEY_ES) for w in words[r[-2]:r[-1] + 1]] for r in SUBS]
@@ -265,6 +266,7 @@ def reveal_mask(p):
 
 READERS = [BRollReader(*b) for b in BROLL]
 def broll_layer(t):
+    if BG_FX: return BG_FX(t)
     out = None
     for r in READERS:
         f = r.get(t)
@@ -326,6 +328,7 @@ def compose(base, t, last_frame):
         cw, ch = W / z, H / z
         x0 = (W - cw) * ANCHOR[0]; y0 = (H - ch) * ANCHOR[1]
         base = base.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + cw, y0 + ch))
+    if PRE_FX: base = PRE_FX(base, t)
     if INSETS: base = apply_broll(base, t)
     cv = base.convert("RGBA")
 
