@@ -375,7 +375,7 @@ def compose(base, t, last_frame):
     moments(cv, t, END0)
 
     # subtítulos
-    if e < .5: draw_captions(cv, t)
+    if e < .5 and not os.environ.get("NO_CAPS"): draw_captions(cv, t)
 
     # TARJETA FINAL
     if e > 0:
