@@ -97,6 +97,7 @@ def main():
     a.add_argument("--dur", type=int, default=8); a.add_argument("--res", default="1080p")
     a.add_argument("--start"); a.add_argument("--end"); a.add_argument("--no-audio", action="store_true")
     a.add_argument("--ref", action="append", default=[], help="imagen de referencia (sujeto/producto)")
+    a.add_argument("--neg", help="prompt negativo (lo que el video debe evitar)")
 
     a = s.add_parser("avatar", help="imagen + audio -> personaje hablando (Creatify Aurora)")
     a.add_argument("image"); a.add_argument("audio"); a.add_argument("-o", required=True)
@@ -176,6 +177,7 @@ def main():
     elif x.cmd == "video":
         body = {"model_id": x.model, "prompt": x.prompt, "aspect_ratio": x.ar,
                 "duration_secs": x.dur, "resolution": x.res, "generate_audio": not x.no_audio}
+        if x.neg: body["negative_prompt"] = x.neg
         if x.start: body["start_frame"] = inline(x.start)
         if x.end: body["end_frame"] = inline(x.end)
         if x.ref:

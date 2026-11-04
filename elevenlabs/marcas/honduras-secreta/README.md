@@ -7,3 +7,8 @@
    gradación igualada y grano. Salta el tramo 3.05–4.15 s del clip de Veo (la "mano" que dibujó la IA).
 
 Animaciones de José: Veo 3.1 (`el.py video ... --start`) a partir del paquete de imágenes. Voz: "Jose latam" (5rpOswWClIYBLr0xKelj).
+
+## Parte 1 · Copán Ruinas (versión final del concepto)
+- Apertura: Veo 3.1 con cuadro inicial = toma real del campo + José en vuelo (`el.py video ... --start start_fly.png --neg ...`).
+- `hat_logo.py`: restaura el logo del sombrero (KLT sobre la copa + parche original de `shot_13`, iluminación y nitidez igualadas).
+- `edit_v.py`: montaje vertical 1080x1920 @24 fps (vuelo, transición con zoom y desenfoque, saludo en cámara lenta 0.8x y toma amplia con cola limpia).
