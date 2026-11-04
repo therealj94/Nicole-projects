@@ -27,7 +27,7 @@ def drone(sel):
 GR = f'fps=24,scale={W}:{H},eq=contrast=1.04:saturation=1.06:gamma=1.02'
 A = vid('v_macro.mp4', 0.6, 2.4, GR)                                     # flor con rocío y abeja
 T = vid('talk_sync_h.mov', 0.0, 5.7, GR)                                   # la guara habla (José sincronizado)
-B = vid('takeoff_h.mp4', 0.5, 4.5, GR)                                   # despega de la rama
+B = vid('tko_a.mp4', 0.0, 4.2, GR)                                   # despega de la rama
 F = vid('fly_h.mp4', 0.0, 6.0, GR)                                       # vuela hacia adelante sobre el campo
 C = drone('select=between(n\\,87\\,206),setpts=N/24/TB')            # gente real saludando (0.8x)
 Pt = vid('petals_h.mp4', 0.2, 3.4, 'crop=1536:864:192:108,' + GR)          # pétalos al viento (sin franjas)
