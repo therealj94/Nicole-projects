@@ -12,3 +12,10 @@ Animaciones de José: Veo 3.1 (`el.py video ... --start`) a partir del paquete d
 - Apertura: Veo 3.1 con cuadro inicial = toma real del campo + José en vuelo (`el.py video ... --start start_fly.png --neg ...`).
 - `hat_logo.py`: restaura el logo del sombrero (KLT sobre la copa + parche original de `shot_13`, iluminación y nitidez igualadas).
 - `edit_v.py`: montaje vertical 1080x1920 @24 fps (vuelo, transición con zoom y desenfoque, saludo en cámara lenta 0.8x y toma amplia con cola limpia).
+
+## Reglas de producción (acordadas con el cliente)
+- José SIEMPRE con su estilo animado 3D oficial (ojos grandes, formas suaves). Nunca fotorrealista.
+- Voz: siempre "Jose latam" (Eleven v4), natural, sin estirar ni cambiador de voz.
+- Sincronía: se ajusta el VIDEO a la voz (`retime2.py`), nunca el audio. Auditoría con `mouth_audit.py`,
+  validada primero con la voz original de Veo como referencia (meta: mismo desfase que la referencia).
+- Revisar cuadro por cuadro orientación y objetos (guitarra, sombrero) antes de entregar.
