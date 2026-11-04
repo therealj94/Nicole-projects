@@ -14,6 +14,7 @@ Comandos:
   image    Generar imagen          el.py image "prompt" -o img.png [--model gemini-3-pro-image] [--ar 9:16] [--ref foto.jpg]
   video    Generar video           el.py video "prompt" -o clip.mp4 [--model veo-3.1-generate-001] [--ar 9:16] [--dur 8] [--start img.png]
   avatar   Personaje hablando  el.py avatar cara.png voz.mp3 -o habla.mp4 [--res 720p]
+  vc       Cambiar voz       el.py vc actuacion.wav -o jose.mp3 --voice ID
   voices   Listar voces
 """
 import argparse, base64, json, mimetypes, os, sys, time
@@ -102,6 +103,12 @@ def main():
     a = s.add_parser("avatar", help="imagen + audio -> personaje hablando (Creatify Aurora)")
     a.add_argument("image"); a.add_argument("audio"); a.add_argument("-o", required=True)
     a.add_argument("--res", default="720p"); a.add_argument("--guidance", type=float); a.add_argument("--audio-guidance", type=float)
+
+    a = s.add_parser("vc", help="cambiador de voz: audio actuado -> otra voz, mismo ritmo")
+    a.add_argument("audio"); a.add_argument("-o", required=True); a.add_argument("--voice", default=DEFAULT_VOICE)
+    a.add_argument("--model", default="eleven_multilingual_sts_v2")
+    a.add_argument("--stability", type=float, default=0.4); a.add_argument("--similarity", type=float, default=0.9)
+    a.add_argument("--style", type=float, default=0.3); a.add_argument("--no-isolate", action="store_true")
 
     s.add_parser("voices")
     x = p.parse_args()
@@ -198,6 +205,12 @@ def main():
         if not r.ok: die(r)
         print("generation_id", r.json()["id"], file=sys.stderr)
         poll("video", r.json()["id"], x.o)
+
+    elif x.cmd == "vc":
+        vs = json.dumps({"stability": x.stability, "similarity_boost": x.similarity, "style": x.style, "use_speaker_boost": True})
+        save(requests.post(f"{B}/v1/voice-changer/{x.voice}?output_format=mp3_44100_192", headers=H,
+                           data={"model_id": x.model, "voice_settings": vs, "remove_background_noise": str(not x.no_isolate).lower()},
+                           files={"audio": open(x.audio, "rb")}), x.o)
 
     elif x.cmd == "voices":
         r = requests.get(f"{B}/v2/voices?page_size=100", headers=H)
