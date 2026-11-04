@@ -13,6 +13,7 @@ Comandos:
   dub      Doblaje a otro idioma   el.py dub video.mp4 --to en -o doblado.mp4
   image    Generar imagen          el.py image "prompt" -o img.png [--model gemini-3-pro-image] [--ar 9:16] [--ref foto.jpg]
   video    Generar video           el.py video "prompt" -o clip.mp4 [--model veo-3.1-generate-001] [--ar 9:16] [--dur 8] [--start img.png]
+  avatar   Personaje hablando  el.py avatar cara.png voz.mp3 -o habla.mp4 [--res 720p]
   voices   Listar voces
 """
 import argparse, base64, json, mimetypes, os, sys, time
@@ -97,6 +98,10 @@ def main():
     a.add_argument("--start"); a.add_argument("--end"); a.add_argument("--no-audio", action="store_true")
     a.add_argument("--ref", action="append", default=[], help="imagen de referencia (sujeto/producto)")
 
+    a = s.add_parser("avatar", help="imagen + audio -> personaje hablando (Creatify Aurora)")
+    a.add_argument("image"); a.add_argument("audio"); a.add_argument("-o", required=True)
+    a.add_argument("--res", default="720p"); a.add_argument("--guidance", type=float); a.add_argument("--audio-guidance", type=float)
+
     s.add_parser("voices")
     x = p.parse_args()
     if not KEY:
@@ -176,6 +181,17 @@ def main():
         if x.ref:
             body["images"] = ([{"image": inline(f), "role": "subject"} for f in x.ref]
                               if x.model.startswith("veo") else [inline(f) for f in x.ref])
+        r = requests.post(f"{B}/v1/flows/video", headers=H, json=body)
+        if not r.ok: die(r)
+        print("generation_id", r.json()["id"], file=sys.stderr)
+        poll("video", r.json()["id"], x.o)
+
+    elif x.cmd == "avatar":
+        au = {"type": "inline_base64", "mime_type": "audio/wav" if x.audio.endswith(".wav") else "audio/mpeg",
+              "content_base64": base64.b64encode(open(x.audio, "rb").read()).decode()}
+        body = {"model_id": "creatify-aurora", "image": inline(x.image), "audio": au, "resolution": x.res}
+        if x.guidance is not None: body["guidance_scale"] = x.guidance
+        if x.audio_guidance is not None: body["audio_guidance_scale"] = x.audio_guidance
         r = requests.post(f"{B}/v1/flows/video", headers=H, json=body)
         if not r.ok: die(r)
         print("generation_id", r.json()["id"], file=sys.stderr)
