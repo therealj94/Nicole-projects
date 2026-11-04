@@ -92,6 +92,7 @@ def main():
     a = s.add_parser("image"); a.add_argument("prompt"); a.add_argument("-o", required=True)
     a.add_argument("--model", default="gemini-3-pro-image"); a.add_argument("--ar", default="9:16")
     a.add_argument("--res", default="2K"); a.add_argument("--ref", action="append", default=[])
+    a.add_argument("--bg", choices=["transparent", "opaque", "auto"]); a.add_argument("--quality")
 
     a = s.add_parser("video"); a.add_argument("prompt"); a.add_argument("-o", required=True)
     a.add_argument("--model", default="veo-3.1-generate-001"); a.add_argument("--ar", default="9:16")
@@ -177,6 +178,9 @@ def main():
         body = {"model_id": x.model, "prompt": x.prompt, "aspect_ratio": x.ar}
         if x.res and not x.model.startswith(("gpt-image-1", "gemini-2.5")): body["resolution"] = x.res
         if x.ref: body["images"] = [inline(f) for f in x.ref]
+        if x.bg: body["background"] = x.bg
+        if x.quality: body["quality"] = x.quality
+        if x.model.startswith("gpt-image-1"): body.pop("resolution", None)
         r = requests.post(f"{B}/v1/flows/image", headers=H, json=body)
         if not r.ok: die(r)
         poll("image", r.json()["id"], x.o, every=4)
