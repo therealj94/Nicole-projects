@@ -26,7 +26,7 @@ def drone(sel):
 # ---------------- tomas ----------------
 GR = f'fps=24,scale={W}:{H},eq=contrast=1.04:saturation=1.06:gamma=1.02'
 A = vid('v_macro.mp4', 0.6, 2.4, GR)                                     # flor con rocío y abeja
-T = vid('talk_h_a.mp4', 0.0, 7.6, GR)                                   # la guara habla (José sincronizado)
+T = vid('talk_sync_h.mov', 0.0, 5.7, GR)                                   # la guara habla (José sincronizado)
 B = vid('takeoff_h.mp4', 0.5, 4.5, GR)                                   # despega de la rama
 F = vid('fly_h.mp4', 0.0, 6.0, GR)                                       # vuela hacia adelante sobre el campo
 C = drone('select=between(n\\,87\\,206),setpts=N/24/TB')            # gente real saludando (0.8x)
@@ -128,7 +128,7 @@ def caption(lay, t):
                 x += m.width + gap
 
 def title(lay, t):
-    t0 = START['T'] + 6.02                          # "Copán" en la voz
+    t0 = START['T'] + 4.08                          # "Copán" en la voz
     out = 1 - ease((t - (START['F'] + .6)) / .4)
     if t < t0 - .3 or out <= 0: return
     ty = 170; TX = 470                                  # tercio izquierdo: libre de la guara
