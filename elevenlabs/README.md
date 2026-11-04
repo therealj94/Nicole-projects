@@ -51,3 +51,27 @@ python3 edit.py export 4.mp4 -o FINAL.mp4 --preset reels
 ## Cómo pasarme el material
 
 Por cada marca: logo en PNG transparente, colores en HEX, tipografía (.ttf/.otf), voz preferida y tono. Por cada video: los clips en bruto y el resultado que quieres (duración, formato, plataforma, guion o texto en pantalla, música). Guarda el material de cada marca en `marcas/<nombre>/`.
+
+
+## Actualización 2026-11-04: herramientas disponibles
+
+### Por API (lo que puedo usar directamente desde aquí)
+| Área | Herramienta | Modelos / opciones | Estado en la cuenta |
+|---|---|---|---|
+| Voz | Texto a voz | `eleven_v4` (el más expresivo, 90+ idiomas), `eleven_v4_turbo`, `eleven_v3`, `eleven_multilingual_v2` | ✅ |
+| Voz | **Diálogo** (`/v1/text-to-dialogue`) | varias voces en una sola toma, con efectos de audio | ✅ disponible |
+| Voz | **Cambiador de voz** (`/v1/voice-changer`) | tu propia actuación grabada → voz de José, conservando la emoción | ✅ disponible |
+| Voz | Efectos de voz (`/v1/audio-effects/catalog`) | radio, teléfono, robot, ambientes | ✅ |
+| Efectos | Efectos de sonido | `eleven_text_to_sound_v3` (hasta ~30 s, en bucle) | ✅ |
+| Música | Música | `music_v2_5`; plan de composición por secciones, letra, bucles, ambiente, **música a partir del video**, separación de pistas (stems), finetunes propios | ✅ |
+| Video | Veo 3.1 | texto/imagen a video, cuadro inicial y final, 3 imágenes de referencia, 4/6/8 s, hasta 4K, con audio | ✅ |
+| Video | Veo 3.1 Fast | igual, más barato | ❌ requiere aprobación del administrador |
+| Video | Seedance 2 / 2.5 | hasta 30 imágenes y **10 videos de referencia**, sincronía labial con audio | ❌ ByteDance requiere aprobación de soporte |
+| Video | Creatify Aurora | imagen + audio → personaje hablando | ❌ requiere aprobación |
+| Imagen | GPT Image 2 / 2.5, Gemini 3 Pro / 3.1 Flash, Seedream 5 | edición con referencias, hasta 4K | ✅ (Seedream requiere aprobación) |
+
+### Solo en la app web de ElevenLabs (no por API)
+- **Kling 4.0**: texto e imagen a video de 3 a 30 s, 720p/1080p, 16:9 · 9:16 · 1:1 · 21:9, hasta 10 imágenes y 5 videos de referencia,
+  cuadro inicial y final, y **edición de video** (cambiar personaje, quitar objetos, re-estilizar el fondo conservando el resto).
+  No disponible para usuarios en Estados Unidos. Fuente: https://elevenlabs.io/video/kling-4
+- También en la app: Sora 2 / 2 Pro, Runway Gen-4.5, Kling 3.0 / O3 Pro, Minimax H3, Seedance 2.5 Video Edit, **Topaz Upscale** (escalado).
