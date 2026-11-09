@@ -25,7 +25,7 @@ w, h = map(int, subprocess.check_output(['ffprobe', '-v', 'error', '-select_stre
 F = np.frombuffer(subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', veo, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE).stdout, np.uint8).reshape(-1, h, w, 3); n = len(F)
 # audio: guitarra original de Veo hasta que José habla + voz natural de José
 ao = off - shift; d = int(ao * 1000)                # 'shift' adelanta la voz respecto al pico
-fc = f"[1:a]atrim=0:{ao - 0.05:.3f},afade=t=out:st={ao - 0.35:.3f}:d=0.3[g];[2:a]adelay={d}|{d}[j];[g][j]amix=inputs=2:normalize=0:duration=longest,apad[a]"
+pre = max(ao - 0.05, 0.05); fc = f"[1:a]atrim=0:{pre:.3f},afade=t=out:st={max(pre - 0.3, 0):.3f}:d={min(0.3, pre):.3f}[g];[2:a]adelay={d}|{d}[j];[g][j]amix=inputs=2:normalize=0:duration=longest,apad[a]"
 enc = subprocess.Popen(['ffmpeg', '-loglevel', 'warning', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{w}x{h}', '-r', '24', '-i', '-', '-i', veo, '-i', jose_audio,
                         '-filter_complex', fc, '-map', '0:v', '-map', '[a]', '-c:v', 'libx264', '-crf', '14', '-pix_fmt', 'yuv420p', '-c:a', 'pcm_s16le', '-t', f'{len(T)/24:.3f}', out], stdin=subprocess.PIPE)
 for s in src:
