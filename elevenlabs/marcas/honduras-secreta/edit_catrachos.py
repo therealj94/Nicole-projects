@@ -23,7 +23,7 @@ SEG = [('i0', S('i0'), 0, dur(S('i0')), 'clip'),
        ('i2', S('i2'), 0, dur(S('i2')), 'clip'),
        ('s2', P('s2'), 0, 5.4, 'clip'),
        ('i3', S('i3'), 0, dur(S('i3')), 'clip'),
-       ('s3', P('s3'), 0, 6.2, 'clip'),
+       ('s3', P('s3'), 0, 7.0, 'clip'),
        ('i4', S('i4'), 0, dur(S('i4')), 'clip'),
        ('s4', P('s4'), 0, 6.0, 'clip'),
        ('i5', S('i5'), 0, dur(S('i5')), 'clip'),
@@ -32,7 +32,7 @@ SEG = [('i0', S('i0'), 0, dur(S('i0')), 'clip'),
        ('s6', P('s6'), 0, 8.0, 'punta'),
        ('i7', S('i7'), 0, dur(S('i7')), 'clip'),
        # montaje rápido
-       ('m1', P('s1'), 4.4, .55, 'mute'), ('m2', P('s2'), 2.6, .55, 'mute'), ('m3', P('s3'), 4.9, .55, 'mute'),
+       ('m1', P('s1'), 4.4, .55, 'mute'), ('m2', P('s2'), 2.6, .55, 'mute'), ('m3', P('s3'), 5.9, .55, 'mute'),
        ('m4', P('s4'), 1.6, .55, 'mute'), ('m5', P('s5'), 1.2, .55, 'mute'), ('m6', P('s6'), 3.4, .55, 'mute'),
        ('m7', P('i7'), .6, .9, 'mute'), ('m8', P('s6'), 6.3, .7, 'mute'),
        ('i8', P('i8'), 0, 6.0, 'clip'),
@@ -56,9 +56,9 @@ jose('s1', 's1', 's1_c', '¡Ya voy saliendo!', "I'm already on my way!")
 jose('i2', 'i2', 'i2_b', 'El transporte es cómodo y tranquilo.', 'Public transport is comfy and relaxed.')
 LINES.append((START['s2'] + .05, START['s2'] + 3.3, '¡Hay campo, hay campo! ¡Súbase, hay campo!', "There's room, there's room! Hop on, there's room!"))
 jose('i3', 'i3', 'i3_c', 'La luz… nunca se va.', 'The power… never goes out.')
-LINES.append((START['s3'] + 3.3, START['s3'] + 4.6, '¡Noooo!', 'Nooooo!'))
+LINES.append((START['s3'] + 5.85, START['s3'] + 6.95, '¡Noooo!', 'Nooooo!'))
 jose('i4', 'i4', 'i4_b', 'Comemos ligero.', 'We eat light.')
-LINES.append((START['s4'] + .4, START['s4'] + 2.3, '¿Y le pongo aguacate, mi amor?', 'Want some avocado on it, sweetie?'))
+LINES.append((START['s4'] + .3, START['s4'] + 2.3, '¿Y le pongo aguacate, mi amor?', 'Want some avocado on it, sweetie?'))
 jose('i5', 'i5', 'i5_a', 'El clima es bien fresco.', 'The weather is nice and cool.')
 jose('i6', 'i6c', 'i6_c', 'Y en las fiestas… nos medimos.', 'And at parties… we keep it chill.')
 jose('i7', 'i7', 'i7_c', 'Todo bien normal.', 'Totally normal.')
@@ -126,7 +126,7 @@ def subtitle(lay, t):
 # rótulo de documental (al inicio, sobre la entrevista)
 F_LT1 = font('Montserrat[wght].ttf', int(56 * (1 if FMT == 'h' else 1.05)), 800)
 F_LT2 = font('Montserrat[wght].ttf', int(30 * (1 if FMT == 'h' else 1.05)), 500)
-LT1, LT2 = text_img('JOSÉ', F_LT1, track=6), text_img('Hondureño · catracho de corazón', F_LT2, track=1)
+LT1, LT2 = text_img('UN CATRACHO', F_LT1, track=6), text_img('hondureño de corazón', F_LT2, track=1)
 F_TT = font('Montserrat[wght].ttf', 40 if FMT == 'h' else 44, 800); F_TT2 = font('CormorantGaramond-Italic[wght].ttf', 40 if FMT == 'h' else 44, 600)
 TT1, TT2 = text_img('ASÍ VIVIMOS LOS CATRACHOS', F_TT, track=8), text_img('un documental de Honduras Secreta', F_TT2)
 def lower_third(lay, t):

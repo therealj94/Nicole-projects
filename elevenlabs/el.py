@@ -53,8 +53,12 @@ def poll(kind, gid, out, every=8, timeout=1800):
         j = r.json()
         st = j.get("status")
         if st == "completed":
-            save(requests.get(j["content_url"]), out)
-            return
+            for attempt in range(6):                      # la descarga del almacenamiento puede fallar de forma temporal
+                r = requests.get(f"{B}/v1/flows/{kind}/{gid}", headers=H).json()
+                d = requests.get(r["content_url"])
+                if d.ok: save(d, out); return
+                print(f"  descarga falló ({d.status_code}), reintento {attempt + 1}…", file=sys.stderr); time.sleep(5 * (attempt + 1))
+            die(d)
         if st == "failed":
             sys.exit(f"Falló: {json.dumps(j)[:800]}")
         print(f"  {st}… {int(time.time()-t0)}s", file=sys.stderr)
