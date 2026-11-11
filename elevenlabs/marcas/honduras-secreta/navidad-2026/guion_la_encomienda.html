@@ -1,0 +1,151 @@
+<title>La Encomienda · Guion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: guion en columna de lectura; cada escena es un bloque con tiempo, lugar, acción y diálogo como en un guion de cine. Dos mundos de color: Honduras cálida (cartón, café, hoja de plátano) y la ciudad fría (azul nieve). */
+:root{
+  --bg:#f6f1e7; --paper:#fffcf6; --fg:#24201b; --muted:#6c6357; --line:#dfd5c3;
+  --hn:#b8642a; --cold:#2f5f8a; --leaf:#3f7a4c; --red:#c4231c;
+  --display:Fraunces,Georgia,serif; --body:Inter,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#e39a5c;--cold:#7fb2e0;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#e39a5c;--cold:#7fb2e0;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 80px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,8vw,66px);font-weight:800}
+h2{font-size:28px;font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{font:italic 500 20px/1.5 var(--display);color:var(--muted);margin-top:14px;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{margin-top:52px;display:flex;flex-direction:column;gap:14px}
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.who{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;background:var(--paper)}
+.who p{font-size:14px;color:var(--muted)}
+.scene{display:grid;grid-template-columns:96px 1fr;gap:18px;padding-block:20px;border-top:1px solid var(--line)}
+.tc{font:500 13px/1.5 var(--mono);color:var(--muted)}
+.tc b{display:block;font:800 26px var(--display);color:var(--fg)}
+.scene.hn .tc b{color:var(--hn)} .scene.cold .tc b{color:var(--cold)}
+.body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.slug{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.scene.hn .slug{color:var(--hn)} .scene.cold .slug{color:var(--cold)}
+.dlg{margin:2px 0 2px 18px;padding-left:14px;border-left:3px solid var(--line)}
+.dlg b{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+.dlg i{font:italic 500 18px/1.45 var(--display)}
+.meta{font-size:13px;color:var(--muted)}
+.meta span{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;font:italic 500 20px/1.6 var(--display)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+td:first-child{font:500 12px var(--mono);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.end{border:2px solid var(--hn);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+@media (max-width:560px){.scene{grid-template-columns:1fr;gap:6px}.tc b{display:inline;margin-right:8px}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Honduras Secreta · Navidad 2026 · Guion v1</p>
+  <h1 style="margin-top:12px">La Encomienda</h1>
+  <p class="lede">Siempre las cajas viajan del norte hacia Honduras. Este año, la guara arma una encomienda al revés: un pedacito de Honduras para un catracho que pasa la Navidad lejos.</p>
+  <div class="chips"><span class="chip">≈ 95 s</span><span class="chip">13 escenas</span><span class="chip">100 % animación</span><span class="chip">Vertical 9:16 + horizontal 16:9</span><span class="chip">Estreno 12 dic</span><span class="chip">Abre la campaña #DesdeHondurasConAmor</span></div>
+
+  <section>
+    <p class="eyebrow">Personajes</p>
+    <h2>Reparto</h2>
+    <div class="cast">
+      <div class="who"><h3 style="color:var(--red)">La guara</h3><p>La mensajera. Versión juvenil de siempre, sombrero con el parche oficial. Habla poco, con la voz de José latam: dos frases y un chiste.</p></div>
+      <div class="who"><h3 style="color:var(--hn)">Doña Marta</h3><p>La mamá, unos 55 años, en un pueblo de La Paz. Delantal, manos de cocinera, sonrisa cansada y orgullosa. Su mensaje de voz es el corazón del video.</p></div>
+      <div class="who"><h3 style="color:var(--cold)">Carlos</h3><p>Su hijo, unos 30 años. Lleva cinco Navidades fuera. Trabaja de noche en la cocina de un restaurante, en una ciudad fría (sin nombrarla). Dice una sola frase.</p></div>
+      <div class="who"><h3>Familia y pueblo</h3><p>La hermana universitaria, el tío cafetalero de Marcala, la señora de las rosquillas, los vecinos y los cipotes del barrio. Un agente de aduana en el aeropuerto.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Guion</p>
+    <h2>Escena por escena</h2>
+    <div id="scenes"></div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Escena 11</p>
+    <h2>El mensaje de la mamá</h2>
+    <div class="letter">“Mijo… aquí todos estamos bien, gracias a vos. La casa ya tiene techo nuevo, y tu hermana ya entró a la universidad. Sabemos lo que te cuesta. Esta Navidad no te preocupés por nosotros… cuidate vos. Aquí te esperamos, el tiempo que sea.”</div>
+    <p class="meta">Unos 16 segundos. Voz cálida, pausada, que se quiebra un poco en “cuidate vos”. Sin música fuerte debajo: solo una guitarra.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Sonido</p>
+    <h2>Voces y música</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Quién</th><th>Líneas</th><th>Voz</th></tr></thead>
+      <tbody>
+        <tr><td>La guara</td><td>“Este año, la encomienda va al revés.” · “Solo amor… y un nacatamal.”</td><td>José latam, natural, sin estirar</td></tr>
+        <tr><td>Doña Marta</td><td>El mensaje de voz (escena 11)</td><td>Por elegir: te propongo 3 voces de mujer madura y cálida</td></tr>
+        <tr><td>Carlos</td><td>“Gracias, mamá.”</td><td>Por elegir: hombre joven, voz suave y quebrada</td></tr>
+        <tr><td>Agente</td><td>“Anything to declare?”</td><td>Voz en inglés, seria y luego amable</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><b>Música:</b> guitarra acústica con aire de villancico y una marimba suave en Honduras; en la ciudad fría queda solo la guitarra. Crece en la carta y cierra con un acorde cálido.</li>
+      <li><b>Efectos:</b> cinta de la caja, café moliéndose, el flash de la cámara vieja, el escáner del aeropuerto, el viento con nieve, la caja al abrirse, la pólvora a lo lejos al final.</li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">Pantalla</p>
+    <h2>Textos y subtítulos</h2>
+    <ul>
+      <li>Título en la escena 2: <b>LA ENCOMIENDA</b>, escrito como con marcador sobre cartón.</li>
+      <li>Rótulos de lugar: <b>Marcala, La Paz</b> · <b>Sabanagrande, Francisco Morazán</b> · <b>Muy lejos de casa</b>.</li>
+      <li>En la caja: <b>“Para Carlos 🇭🇳”</b>, añadido en edición para que la letra no salga deforme.</li>
+      <li>Subtítulos en español sobre la cabeza de quien habla, y una versión con subtítulos en inglés.</li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">Producción</p>
+    <h2>Cómo lo vamos a hacer</h2>
+    <ul>
+      <li><b>Paso 1 · Fichas de personaje:</b> genero una imagen de referencia de doña Marta, de Carlos y de la caja para que se vean iguales en todas las tomas (3 imágenes).</li>
+      <li><b>Paso 2 · Tomas:</b> 15 a 17 tomas con Veo 3.1 de 6 a 8 s, en 4K horizontal, con el recorte vertical por escena como en los videos anteriores.</li>
+      <li><b>Paso 3 · Voces:</b> guara con José latam y sincronía de labios; Marta y Carlos con las voces que elijás.</li>
+      <li><b>Paso 4 · Logo y edición:</b> corrección del parche del sombrero en cada toma, color parejo, música, efectos, textos y subtítulos.</li>
+      <li><b>Auditoría</b> antes de entregar: sincronía, sombrero, coherencia de objetos (la caja, la foto y el nacatamal deben verse igual en todas las escenas) y volumen.</li>
+    </ul>
+  </section>
+
+  <div class="end" style="margin-top:52px">
+    <h3>Para aprobar</h3>
+    <ul>
+      <li>El guion, la carta de la mamá y los nombres (Marta y Carlos).</li>
+      <li>La broma de la aduana: ¿te parece bien en inglés con la respuesta en español?</li>
+      <li>Después de tu visto bueno genero primero las 3 fichas de personaje y te las muestro antes de hacer las tomas de video.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const S=[
+ {t:'0–6 s',w:'cold',s:'Ciudad fría · noche · calle con nieve',a:'Carlos camina solo de regreso del trabajo, con la chaqueta de cocina asomando bajo el abrigo. Se detiene bajo un farol y mira en el celular una foto de su familia. Sopla vapor de frío.',m:'Solo viento y una guitarra lejana.'},
+ {t:'6–14 s',w:'hn',s:'Pueblo de La Paz · amanecer · cocina de doña Marta',a:'Doña Marta pone una caja de cartón vacía sobre la mesa. La guara aterriza en la ventana, se acomoda el sombrero y mira la caja con ojos de plan.',d:[['La guara','Este año, la encomienda va al revés.']],m:'Entra la marimba. Título: LA ENCOMIENDA.'},
+ {t:'14–22 s',w:'hn',s:'Marcala, La Paz · finca de café · mañana',a:'El tío cafetalero le da a la guara una bolsa de café recién tostado. La guara la huele y el aroma la levanta un poco del suelo, como en las caricaturas.',m:'Rótulo: Marcala, La Paz. Efecto: café moliéndose.'},
+ {t:'22–29 s',w:'hn',s:'Sabanagrande · tienda de rosquillas',a:'La señora mete rosquillas en una lata. La guara se roba una a escondidas. La señora la mira por encima de los lentes. La guara la devuelve a la lata despacito, con cara de inocente.',m:'Rótulo: Sabanagrande, Francisco Morazán. Momento de humor.'},
+ {t:'29–37 s',w:'hn',s:'El barrio · tarde',a:'La familia y los vecinos posan frente a la casa para una foto para Carlos. La guara la toma con una cámara vieja. Flash. Los cipotes hacen caras chistosas y la hermana enseña su carné de la universidad.',m:'Efecto: flash. La foto sale de la cámara.'},
+ {t:'37–45 s',w:'hn',s:'Cocina de doña Marta · noche',a:'Doña Marta graba algo en su celular, con la mano en el pecho (todavía no oímos qué dice). Envuelve un nacatamal en hoja de plátano y lo pone en la caja con el café, la lata de rosquillas y la foto. Cierra la caja con mecate.',m:'En edición: “Para Carlos 🇭🇳” sobre la caja.'},
+ {t:'45–51 s',w:'cold',s:'Avión · ventanilla',a:'La guara va sentada junto a la ventanilla, abrazando la caja con el cinturón puesto. Afuera las nubes se ponen oscuras y empiezan a caer copos de nieve.',m:'Cambia el color: de cálido a azul frío.'},
+ {t:'51–59 s',w:'cold',s:'Aeropuerto · aduana',a:'El escáner muestra la silueta de un nacatamal dentro de la caja. Un agente serio mira a la guara.',d:[['Agente','Anything to declare?'],['La guara','Solo amor… y un nacatamal.']],m:'El agente huele el aire, sonríe sin querer y le hace seña de que pase.'},
+ {t:'59–66 s',w:'cold',s:'Edificio de Carlos · noche · nieve',a:'Carlos llega cansado y encuentra la caja frente a su puerta. Mira a los lados: no hay nadie. Afuera, en la ventana nevada, la guara se esconde y espía.',m:'Viento. Silencio.'},
+ {t:'66–76 s',w:'cold',s:'Apartamento de Carlos',a:'Carlos abre la caja. El olor del café le cierra los ojos. Saca la foto: se ríe de las caras de los cipotes y se le salen las lágrimas al ver a su mamá. Muerde una rosquilla.',m:'La luz cálida de la caja ilumina su cara en el cuarto azul.'},
+ {t:'76–92 s',w:'hn',s:'El mensaje · entre los dos países',a:'Carlos da play al mensaje de voz. Mientras habla doña Marta, vemos su mesa en Honduras con una silla vacía y un plato servido.',d:[['Doña Marta (voz)','Mijo… aquí todos estamos bien, gracias a vos…']],m:'Texto completo de la carta abajo. Solo guitarra.'},
+ {t:'92–97 s',w:'cold',s:'Apartamento de Carlos',a:'Carlos, con los ojos mojados, abraza la foto.',d:[['Carlos','Gracias, mamá.']],m:'Desenvuelve el nacatamal. En la ventana, la guara le hace un pulgar arriba y se va volando entre la nieve. A lo lejos, pólvora.'},
+ {t:'97–105 s',w:'hn',s:'Cierre',a:'Texto sobre la imagen: “A los que se fueron a buscar un sueño… y a sostener los de su familia: Honduras no los olvida. Feliz Navidad, catrachos.” Logo de Honduras Secreta.',m:'Tarjeta final: “¿Tenés a alguien lejos? Mandale tu mensaje. Lo publicamos el 24. #DesdeHondurasConAmor”.'}
+];
+document.getElementById('scenes').innerHTML=S.map((x,i)=>`<article class="scene ${x.w}"><div class="tc"><b>${i+1}</b>${x.t}</div><div class="body"><p class="slug">${x.s}</p><p>${x.a}</p>${(x.d||[]).map(d=>`<div class="dlg"><b>${d[0]}</b><i>“${d[1]}”</i></div>`).join('')}<p class="meta"><span>Sonido y pantalla</span>${x.m}</p></div></article>`).join('');
+</script>
