@@ -1,5 +1,5 @@
 const {chromium}=require('playwright');const fs=require('fs');const path=require('path');
-const cards=JSON.parse(fs.readFileSync('cards.json'));const T=cards.length;
+const cards=JSON.parse(fs.readFileSync(process.argv[2]||'cards.json'));const T=cards.length;
 const css=`@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;1,9..144,500&family=Inter:ital,wght@0,400;0,500;0,600;1,500&family=JetBrains+Mono:wght@500&display=block');
 *{box-sizing:border-box;margin:0}body{width:1080px;height:1350px;background:#f5ecdc;font-family:Inter,sans-serif;color:#2a211b;overflow:hidden;position:relative}
 .ph{height:770px;background-size:cover;position:relative}
@@ -15,12 +15,12 @@ const css=`@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,o
 .foot img{height:64px}`;
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1350}});
 const logo='data:image/png;base64,'+fs.readFileSync('logo.png').toString('base64');
-fs.mkdirSync('out',{recursive:true});
+const OUT=process.argv[3]||'out';fs.mkdirSync(OUT,{recursive:true});
 for(let i=0;i<T;i++){const c=cards[i];const im='data:image/png;base64,'+fs.readFileSync(c.img).toString('base64');
 const html=`<style>${css}</style><div class="ph" style="background-image:url(${im});background-position:${c.pos} 50%"><div class="pill">DICCIONARIO CATRACHO</div></div>
 <div class="panel"><div class="w">${c.w}</div><div class="cat">${c.cat}</div><div class="def">${c.def}</div><div class="ej"><b>EJEMPLO</b>“${c.ej}”</div></div>
 <div class="foot"><img src="${logo}"><span>@honduras.secreta · ${String(i+1).padStart(2,'0')}/${String(T).padStart(2,'0')}</span></div>`;
 await p.setContent(html,{waitUntil:'networkidle'});await p.evaluate(()=>document.fonts.ready);
 const h=await p.evaluate(()=>document.querySelector('.ej').getBoundingClientRect().bottom);
-await p.screenshot({path:`out/dicc_${String(i+1).padStart(2,'0')}.png`});console.log(i+1,c.w,'ej bottom',Math.round(h));}
+await p.screenshot({path:OUT+`/dicc_${String(i+1).padStart(2,'0')}.png`});console.log(i+1,c.w,'ej bottom',Math.round(h));}
 await b.close()})();
