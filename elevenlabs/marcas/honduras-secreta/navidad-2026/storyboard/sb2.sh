@@ -1,0 +1,12 @@
+E=/home/user/Nicole-projects/elevenlabs
+ST="Stylized 3D cartoon animation like a family animated feature film, cinematic horizontal 16:9 frame, soft rounded shapes, expressive faces. NOT realistic. No text or letters anywhere except the macaw's hat patch. The main action is in the CENTER third of the frame."
+G="The young teenage cartoon macaw from the reference images, identical design: oversized head, big round glossy eyes, soft smooth feathers, rounded beak, red body, yellow and blue wings used like hands, the SAME beige bucket hat with the rectangular 'HONDURAS Secreta' patch."
+M="Doña Marta exactly as in her reference sheet (55-year-old Honduran mother, gray-streaked hair in a low bun, floral blouse, light-blue apron)."
+C="Carlos exactly as in his reference sheet (30-year-old Honduran man, short black hair, stubble, dark-blue puffer coat over a white cook jacket)."
+B="The cardboard box exactly as in the prop reference (brown, tied with natural rope in a cross with a bow, no writing)."
+R="--model gemini-3.1-flash-image --ar 16:9 --res 2K"
+g(){ o=$1; shift; p=$1; shift; python3 $E/el.py image "$ST $p" -o sb_$o.png $R "$@" > sb_$o.log 2>&1; }
+g 01 "Scene: a cold big city street at night with snow falling, warm streetlight. $C He walks alone home from work, stops under the streetlight and looks at a family photo on his phone screen (glow on his face), breath steaming, melancholic. Blue cold palette." --ref carlos_ref.png --ref style_humans.png &
+g 06 "Scene: the same humble Honduran kitchen at night, warm lamp light. $M She sits at the wooden table recording a voice message on her phone held near her mouth, her other hand on her chest, emotional. On the table there is ONLY ONE cardboard box, open, and she is placing a nacatamal wrapped in green banana leaf inside it, next to a bag of coffee, a round tin of rosquillas and a printed family photo. $G The macaw stands on the table edge holding the rope ready to tie that same box. There is only one box in the whole scene." --ref marta_ref.png --ref jose_ref.png --ref caja_ref_c.png &
+g 10 "Scene: a small, modest, cold blue-lit apartment at night, snow outside the window. $C He is ALONE in the room (no animals, no birds inside), sitting on the floor opening the cardboard box; warm golden light glows from inside the box onto his face. He holds the printed family photo, laughing and crying at the same time, one tear. Inside the box: bag of coffee, tin of rosquillas, nacatamal in banana leaf." --ref carlos_ref.png --ref caja_ref_c.png --ref style_humans.png &
+wait
