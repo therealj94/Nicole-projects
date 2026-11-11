@@ -65,11 +65,11 @@
  },
  {
   "img": "gen/fix/aguevado.png",
-  "pos": "40%",
+  "pos": "50%",
   "w": "Agüevado",
   "cat": "adj. · agüevada",
-  "def": "Aburrido, triste, sin ánimo.",
-  "ej": "Llueve todo el día y yo aquí, agüevado."
+  "def": "Apenado, avergonzado.",
+  "ej": "Se me cayó el plato frente a todos. ¡Qué agüevado!"
  },
  {
   "img": "gen/fix/chamba.png",
@@ -98,10 +98,10 @@
  {
   "img": "c/s1_3.2.png",
   "pos": "30%",
-  "w": "¡Sho!",
-  "cat": "interj.",
-  "def": "Para pedir silencio. Que se callen, ya.",
-  "ej": "¡Sho! Que estoy en la hamaca y no estoy pa' nadie."
+  "w": "Estar mamado",
+  "cat": "loc. verb.",
+  "def": "Estar muy cansado, agotado.",
+  "ej": "Después de la chamba quedé mamado."
  },
  {
   "img": "c/s2_3.2.png",
