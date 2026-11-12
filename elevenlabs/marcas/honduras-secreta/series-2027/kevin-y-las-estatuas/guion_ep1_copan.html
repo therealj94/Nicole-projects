@@ -1,0 +1,79 @@
+<title>El Reino de Copán · Guion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: guion en columna de lectura; cada escena es un bloque con tiempo, lugar, acción y diálogo como en un guion de cine. Dos mundos de color: Honduras cálida (cartón, café, hoja de plátano) y la ciudad fría (azul nieve). */
+:root{
+  --bg:#f6f1e7; --paper:#fffcf6; --fg:#24201b; --muted:#6c6357; --line:#dfd5c3;
+  --hn:#3f8f5a; --cold:#b0602a; --leaf:#3f7a4c; --red:#c4231c;
+  --display:Fraunces,Georgia,serif; --body:Inter,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#7cc897;--cold:#f0a060;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#7cc897;--cold:#f0a060;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 80px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,8vw,66px);font-weight:800}
+h2{font-size:28px;font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{font:italic 500 20px/1.5 var(--display);color:var(--muted);margin-top:14px;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{margin-top:52px;display:flex;flex-direction:column;gap:14px}
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.who{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;background:var(--paper)}
+.who p{font-size:14px;color:var(--muted)}
+.scene{display:grid;grid-template-columns:96px 1fr;gap:18px;padding-block:20px;border-top:1px solid var(--line)}
+.tc{font:500 13px/1.5 var(--mono);color:var(--muted)}
+.tc b{display:block;font:800 26px var(--display);color:var(--fg)}
+.scene.hn .tc b{color:var(--hn)} .scene.cold .tc b{color:var(--cold)}
+.body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.slug{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.scene.hn .slug{color:var(--hn)} .scene.cold .slug{color:var(--cold)}
+.dlg{margin:2px 0 2px 18px;padding-left:14px;border-left:3px solid var(--line)}
+.dlg b{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+.dlg i{font:italic 500 18px/1.45 var(--display)}
+.meta{font-size:13px;color:var(--muted)}
+.meta span{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;font:italic 500 20px/1.6 var(--display)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+td:first-child{font:500 12px var(--mono);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.end{border:2px solid var(--hn);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+@media (max-width:560px){.scene{grid-template-columns:1fr;gap:6px}.tc b{display:inline;margin-right:8px}}
+</style>
+<div class="wrap">
+  <p class="eyebrow">Honduras Secreta · Serie “Kevin y las estatuas” · Episodio 1 · Guion v1</p>
+  <h1 style="margin-top:12px">El Reino de Copán</h1>
+  <p class="lede">Kevin no quiere hacer su tarea sobre Copán. La guara lo lleva a las ruinas al atardecer, el rey de piedra despierta y, hasta el amanecer, Kevin aprende la historia de los mayas de la mano de quienes la vivieron.</p>
+  <div class="chips"><span class="chip">≈ 2:28</span><span class="chip">14 escenas</span><span class="chip">100 % animación</span><span class="chip">Vertical 9:16 + horizontal 16:9</span><span class="chip">Subtítulos en inglés</span><span class="chip">Sugerido: marzo 2027</span></div>
+  <section><p class="eyebrow">Personajes</p><h2>Reparto</h2><div class="cast"><div class="who"><h3 style="color:var(--cold)">Kevin</h3><p>El cipote del barrio, 10 años, que no quiere hacer la tarea. Es el protagonista humano de la serie.</p></div><div class="who"><h3 style="color:var(--red)">La guara</h3><p>La compañera de aventuras, con la voz de José latam: la que lo convence de ir y pone el humor.</p></div><div class="who"><h3 style="color:var(--hn)">Rey 18 Conejo</h3><p>Waxaklajuun Ub’aah K’awiil, el rey 13 de Copán, tallado en las estelas de la Gran Plaza. Majestuoso, sabio y con buen humor.</p></div><div class="who"><h3 style="color:var(--hn)">El escriba y las guacamayas de piedra</h3><p>El escriba de piedra que lee los glifos, y las guacamayas talladas del juego de pelota, que tratan a la guara como familia.</p></div></div></section>
+  <section><p class="eyebrow">Guion</p><h2>Escena por escena</h2><div id="scenes"></div></section>
+  <section><p class="eyebrow">Datos</p><h2>Lo que el episodio enseña</h2><ul>
+   <li>Copán fue fundada en el año 426 por K’inich Yax K’uk’ Mo’, y el Altar Q muestra a sus 16 gobernantes.</li>
+   <li>Waxaklajuun Ub’aah K’awiil (“18 Conejo”) fue el rey número 13; gobernó entre 695 y 738 y aparece en las estelas de la Gran Plaza.</li>
+   <li>La Escalinata Jeroglífica tiene más de dos mil glifos y es el texto maya más largo conocido.</li>
+   <li>Los marcadores del juego de pelota tienen forma de cabeza de guacamaya, un ave sagrada para los mayas de Copán.</li>
+   <li>El templo Rosalila, escondido dentro de la Estructura 16, lo descubrió el arqueólogo hondureño Ricardo Agurcia en 1989.</li>
+   <li>Los mayas usaban un sistema de puntos, barras y el cero.</li>
+   <li>Copán es Patrimonio de la Humanidad de la UNESCO desde 1980.</li></ul>
+   <p class="meta">Antes de producir, reviso cada dato con fuentes del Instituto Hondureño de Antropología e Historia y de la UNESCO. Un ajuste: la Estela A es de 18 Conejo; si preferís otra estela por su forma, lo cambio.</p></section>
+  <section><p class="eyebrow">Sonido</p><h2>Música y voces</h2><ul>
+   <li><b>Música:</b> aventura con marimba, flauta de barro y percusión maya, mágica cuando despiertan las estatuas y emotiva en el amanecer.</li>
+   <li><b>Voces:</b> Kevin y la guara con las voces que ya tienen. Para el rey, una voz grave y cálida; para el escriba, una voz de abuelo sabio; para la maestra, una voz cálida. Te las mando en video antes de producir.</li></ul></section>
+  <div class="end" style="margin-top:52px"><h3>Para aprobar</h3><ul>
+   <li>El guion, los diálogos y el formato de unos 2 minutos y medio (o una versión corta de 90 segundos para Reels).</li>
+   <li>Si te parece bien que el rey diga su nombre maya completo con el apodo de “18 Conejo”.</li>
+   <li>Con tu visto bueno empiezo por las fichas del rey, el escriba y las guacamayas de piedra.</li></ul></div>
+</div>
+<script>
+const S=[{"t": "0–8 s", "w": "cold", "s": "Casa de Kevin · tarde", "a": "Kevin, frente a un cuaderno en blanco que dice “TAREA: Historia de Copán”, se tira de espaldas en la cama. La guara entra por la ventana.", "d": [["Kevin", "¿Y qué tiene de interesante un montón de piedras viejas?"], ["La guara", "¿Piedras? Agarrá la mochila, cipote… nos vamos a Copán."]], "m": "Música de aventura suave. Título: KEVIN Y LAS ESTATUAS · Ep. 1 · El Reino de Copán."}, {"t": "8–15 s", "w": "cold", "s": "Llegada a Copán Ruinas · atardecer", "a": "Calles empedradas del pueblo y entrada al parque. En los árboles, guaras rojas de verdad. La guara las saluda emocionada.", "d": [["La guara", "¡Primas! ¡Ya llegó la familia!"]], "m": "Rótulo: Copán Ruinas, Copán."}, {"t": "15–24 s", "w": "hn", "s": "La Gran Plaza · último sol", "a": "Kevin camina entre estelas enormes, aburrido. Un rayo de sol dorado toca la Estela A: la piedra cruje, el polvo cae y el rey de piedra abre los ojos.", "d": [["Kevin", "Ajá… puras piedras."], ["Rey 18 Conejo", "¿Piedras? ¡Soy Waxaklajuun Ub’aah K’awiil, decimotercer rey de Copán!"]], "m": "Momento mágico: la música sube."}, {"t": "24–32 s", "w": "hn", "s": "La Gran Plaza", "a": "Kevin se esconde detrás de la guara. El rey se ríe y se agacha.", "d": [["Kevin", "¿Waxa… qué?"], ["Rey 18 Conejo", "Me pueden decir Dieciocho Conejo. Vengan, les enseño mi reino."]], "m": "Humor: la guara intenta pronunciar el nombre y se le traba la lengua."}, {"t": "32–42 s", "w": "hn", "s": "El Altar Q", "a": "El rey señala el altar con 16 figuras talladas sentadas en fila.", "d": [["Rey 18 Conejo", "Aquí están los 16 reyes de Copán. El primero, K’inich Yax K’uk’ Mo’, fundó la ciudad en el año 426."], ["Kevin", "¡Hace como mil seiscientos años!"]], "m": "Las figuras del altar parpadean una por una."}, {"t": "42–56 s", "w": "hn", "s": "El juego de pelota", "a": "En los bordes de la cancha hay cabezas de guacamaya de piedra. Despiertan y graznan. La guara las mira con la boca abierta.", "d": [["Guacamayas de piedra", "¡Bienvenida, prima!"], ["La guara", "¿Ustedes… son mis tatarabuelas?"], ["Rey 18 Conejo", "La guacamaya era sagrada para nosotros. Por eso cuidan la cancha."]], "m": "Los mayas tallaron guacamayas en los marcadores del juego de pelota."}, {"t": "56–68 s", "w": "hn", "s": "El partido", "a": "El rey le lanza a Kevin una pelota de hule pesada. Kevin intenta pegarle con la cadera, se cae, se levanta y la pasa por el aro. Las guacamayas de piedra celebran.", "d": [["Rey 18 Conejo", "¡Con la cadera, no con las manos!"], ["Kevin", "¡GOOOL… digo, punto!"]], "m": "Momento de comedia y acción."}, {"t": "68–80 s", "w": "cold", "s": "La Escalinata Jeroglífica", "a": "Un escriba de piedra, con su pincel y su vasija de tinta, despierta en las gradas. Ilumina los glifos con un brillo dorado.", "d": [["El escriba", "Esta escalinata es el texto maya más largo que existe: más de dos mil glifos cuentan la historia de nuestros reyes."], ["Kevin", "¿Y vos lo sabés leer todo?"], ["El escriba", "Casi todo… algunos todavía son un secreto."]], "m": "Guiño al nombre de la marca: “un secreto”."}, {"t": "80–90 s", "w": "cold", "s": "El nombre de Kevin", "a": "El escriba pinta en el aire, con luz, unos glifos con el nombre de Kevin. Kevin se queda maravillado.", "d": [["El escriba", "Así se escribiría tu nombre, Kevin."], ["Kevin", "¡Está más bonito que mi firma!"]], "m": "Momento tierno."}, {"t": "90–104 s", "w": "hn", "s": "Los números mayas", "a": "Kevin confiesa que odia las matemáticas. El rey dibuja en el suelo puntos, barras y una concha: el cero maya.", "d": [["Kevin", "Es que yo soy malo pa’ la matemática…"], ["Rey 18 Conejo", "Un punto es uno, una barra es cinco… y esta concha es el cero. Nosotros ya usábamos el cero hace siglos."], ["Kevin", "¡Ah, así sí entiendo!"]], "m": "Guiño al Año Viejo, donde Kevin tiró sus tareas de matemática."}, {"t": "104–116 s", "w": "cold", "s": "Rosalila", "a": "El escriba los lleva por un túnel bajo el templo. Al fondo, un templo pintado de rojo, verde y amarillo.", "d": [["El escriba", "Este es Rosalila, un templo escondido dentro de la pirámide. Lo descubrió un arqueólogo hondureño, Ricardo Agurcia, en 1989."], ["La guara", "¡Un catracho descubriendo secretos… como nosotros!"]], "m": "Luz cálida en el túnel."}, {"t": "116–128 s", "w": "hn", "s": "Amanecer", "a": "El cielo empieza a aclarar. Las estatuas regresan a sus lugares.", "d": [["Rey 18 Conejo", "Ya viene el sol. Tenemos que volver a ser piedra."], ["Kevin", "¿Los voy a volver a ver?"], ["Rey 18 Conejo", "Cada vez que alguien nos visite y nos cuide, vamos a estar vivos. Copán es de todos, Kevin."]], "m": "Música emotiva."}, {"t": "128–140 s", "w": "cold", "s": "La escuela · al día siguiente", "a": "Kevin presenta su tarea con dibujos de glifos, números mayas y guacamayas. La maestra le pone 10. La guara le guiña el ojo desde la ventana.", "d": [["La maestra", "¡Excelente, Kevin! ¿Cómo aprendiste todo esto?"], ["Kevin", "Digamos que… me lo contaron en persona."]], "m": "En la Gran Plaza, la estela le guiña el ojo a la cámara."}, {"t": "140–148 s", "w": "hn", "s": "Cierre", "a": "Texto: “Copán Ruinas · Patrimonio de la Humanidad. ¿Ya lo conocés?” y avance del próximo episodio: una estatua de Lempira abriendo los ojos.", "d": [], "m": "Logo de Honduras Secreta."}];
+document.getElementById('scenes').innerHTML=S.map((x,i)=>`<article class="scene ${x.w}"><div class="tc"><b>${i+1}</b>${x.t}</div><div class="body"><p class="slug">${x.s}</p><p>${x.a}</p>${x.d.map(d=>`<div class="dlg"><b>${d[0]}</b><i>“${d[1]}”</i></div>`).join('')}<p class="meta"><span>Sonido y pantalla</span>${x.m}</p></div></article>`).join('');
+</script>
