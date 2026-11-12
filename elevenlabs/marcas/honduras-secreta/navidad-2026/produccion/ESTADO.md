@@ -1,4 +1,4 @@
-# La Encomienda · estado (en pausa)
+# La Encomienda · estado: v1 terminada (12 nov)
 
 Hecho:
 - 14 tomas Veo 3.1 en vertical 4K (vid.sh). e10 regenerada sin la guara; e08 regenerada con el diálogo exacto.

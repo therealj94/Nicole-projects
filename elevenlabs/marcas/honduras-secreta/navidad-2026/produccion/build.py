@@ -4,7 +4,7 @@ R = lambda *a: subprocess.run(a, check=True)
 # (archivo, desde, hasta, velocidad)
 SEGS = [('hd/e01.mov',0,6,1), ('hd/e02s.mp4',0,6.5,1), ('hd/e03.mov',0,5.2,1), ('hd/e04.mov',2.8,8,1), ('hd/e05.mov',0,6.5,1),
         ('hd/e06.mov',0,4.8,1), ('hd/e07.mov',0,5,1), ('hd/e08s.mp4',0,4.92,1), ('hd/e09.mov',0,5.5,1), ('hd/e10.mov',0,8,1),
-        ('hd/e11a.mov',0,8,.75), ('hd/e11b.mov',0,1.4,.5), ('hd/e12.mov',0,.35,.15), ('hd/e12s.mp4',0,6.0,1), ('hd/e13.mov',0,8,1)]
+        ('hd/e11a.mov',0,8,.75), ('hd/e11b.mov',0,0.42,.15), ('hd/e12.mov',0,.35,.15), ('hd/e12s.mp4',0,6.0,1), ('hd/e13.mov',0,8,1)]
 starts = []; t = 0; files = []
 for k, (f, a, b, sp) in enumerate(SEGS):
     o = f'seg/{k:02d}.mp4'; d = (b - a) / sp
