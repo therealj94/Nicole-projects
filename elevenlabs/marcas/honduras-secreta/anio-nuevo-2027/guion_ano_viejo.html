@@ -1,0 +1,77 @@
+<title>El Año Viejo · Guion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: guion en columna de lectura; cada escena es un bloque con tiempo, lugar, acción y diálogo como en un guion de cine. Dos mundos de color: Honduras cálida (cartón, café, hoja de plátano) y la ciudad fría (azul nieve). */
+:root{
+  --bg:#f6f1e7; --paper:#fffcf6; --fg:#24201b; --muted:#6c6357; --line:#dfd5c3;
+  --hn:#c2581b; --cold:#6a3fa0; --leaf:#3f7a4c; --red:#c4231c;
+  --display:Fraunces,Georgia,serif; --body:Inter,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#f0a05a;--cold:#b897ea;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--paper:#1f1b16;--fg:#efe8dc;--muted:#a99f90;--line:#3a332a;--hn:#f0a05a;--cold:#b897ea;--leaf:#7fbf8c;--red:#ef6a5f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 80px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,8vw,66px);font-weight:800}
+h2{font-size:28px;font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{font:italic 500 20px/1.5 var(--display);color:var(--muted);margin-top:14px;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{margin-top:52px;display:flex;flex-direction:column;gap:14px}
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.who{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;background:var(--paper)}
+.who p{font-size:14px;color:var(--muted)}
+.scene{display:grid;grid-template-columns:96px 1fr;gap:18px;padding-block:20px;border-top:1px solid var(--line)}
+.tc{font:500 13px/1.5 var(--mono);color:var(--muted)}
+.tc b{display:block;font:800 26px var(--display);color:var(--fg)}
+.scene.hn .tc b{color:var(--hn)} .scene.cold .tc b{color:var(--cold)}
+.body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.slug{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.scene.hn .slug{color:var(--hn)} .scene.cold .slug{color:var(--cold)}
+.dlg{margin:2px 0 2px 18px;padding-left:14px;border-left:3px solid var(--line)}
+.dlg b{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+.dlg i{font:italic 500 18px/1.45 var(--display)}
+.meta{font-size:13px;color:var(--muted)}
+.meta span{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;font:italic 500 20px/1.6 var(--display)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+td:first-child{font:500 12px var(--mono);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.end{border:2px solid var(--hn);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+@media (max-width:560px){.scene{grid-template-columns:1fr;gap:6px}.tc b{display:inline;margin-right:8px}}
+</style>
+<div class="wrap">
+  <p class="eyebrow">Honduras Secreta · Año Nuevo 2027 · Guion v1</p>
+  <h1 style="margin-top:12px">El Año Viejo</h1>
+  <p class="lede">Un 31 de diciembre en el barrio: todos meten en el muñeco lo que quieren dejar atrás, la guara se roba el show y, a las doce, el humor se vuelve abrazo.</p>
+  <div class="chips"><span class="chip">≈ 84 s</span><span class="chip">13 escenas</span><span class="chip">100 % animación</span><span class="chip">Vertical 9:16 + horizontal 16:9</span><span class="chip">Subtítulos en inglés</span><span class="chip">Publicar 30 dic, tarde</span></div>
+  <section><p class="eyebrow">Personajes</p><h2>Reparto</h2><div class="cast"><div class="who"><h3 style="color:var(--red)">La guara</h3><p>La de siempre, con la voz de José latam. Es la que trae el humor y el deseo final.</p></div><div class="who"><h3 style="color:var(--hn)">Don Chepe</h3><p>Unos 65 años, bigote, camisa de botones y gorra. Es el que organiza el Año Viejo cada año y el corazón del barrio.</p></div><div class="who"><h3 style="color:var(--hn)">Doña Tencha</h3><p>Unos 50 años, rulos y delantal. Es la de la maleta y el recibo de la luz.</p></div><div class="who"><h3 style="color:var(--cold)">Kevin, Don Lalo y la abuela</h3><p>Kevin es un cipote de 10 años; Don Lalo, el taxista con camisa floreada; y la abuela, la que barre la casa.</p></div></div>
+  <p class="meta">Los vecinos se quedan como el elenco fijo del barrio de Honduras Secreta y pueden volver en las series.</p></section>
+  <section><p class="eyebrow">Guion</p><h2>Escena por escena</h2><div id="scenes"></div></section>
+  <section><p class="eyebrow">Sonido</p><h2>Música y voces</h2><ul>
+   <li><b>Música:</b> cumbia catracha de fin de año, alegre y con acordeón y marimba, que baja debajo de los diálogos. En la cuenta regresiva se para en seco, revienta en el “¡Feliz año!” y en el techo pasa a una versión suave y emotiva. Instrumental, para que no compita con los chistes.</li>
+   <li><b>Voces:</b> la guara con José latam. Para Don Chepe, Doña Tencha, Kevin, Don Lalo y la abuela te mando opciones de voz en video antes de producir.</li>
+   <li><b>Efectos:</b> silbadores, el apagón, la polilla, la maleta con rueditas, la escoba, el conteo, los cohetes, el fuego y los abrazos.</li></ul></section>
+  <section><p class="eyebrow">Producción</p><h2>Cómo lo hacemos</h2><ul>
+   <li>Primero las fichas de los cinco vecinos y del muñeco del Año Viejo, para que sean iguales en todas las tomas.</li>
+   <li>Unas 15 tomas en vertical 4K, cada una indicando quién habla y quién escucha, con la sincronía por línea de La Encomienda.</li>
+   <li>El logo del sombrero se corrige solo donde se puede confirmar que está sobre el sombrero; donde no, se deja el parche original.</li>
+   <li>Subtítulos en inglés para diálogos y textos finales. Versión horizontal y copias de menos de 20 MB.</li></ul></section>
+  <div class="end" style="margin-top:52px"><h3>Para aprobar</h3><ul>
+   <li>Los diálogos y los nombres de los vecinos.</li>
+   <li>El chiste de las prendas amarillas en el tendedero (si preferís, lo cambio por camisas amarillas).</li>
+   <li>Con tu visto bueno empiezo por las fichas de los personajes.</li></ul></div>
+</div>
+<script>
+const S=[{"t": "0–6 s", "w": "hn", "s": "Barrio · 31 de diciembre · atardecer", "a": "Calle de barrio con luces de colores, cipotes con silbadores y olor a nacatamal. La guara llega volando con una bolsa de ropa vieja y aterriza en el muro.", "d": [["La guara", "¡Ya traje la ropa pa’l Año Viejo!"]], "m": "Título: EL AÑO VIEJO, escrito con marcador. Música de cumbia catracha suave."}, {"t": "6–13 s", "w": "hn", "s": "Frente a la casa de Don Chepe", "a": "Don Chepe rellena con aserrín un muñeco sentado en una silla de plástico: camisa vieja, pantalón remendado y un sombrero roto.", "d": [["Don Chepe", "Este año lo vamos a hacer bien grandote… que se lleve todo lo malo."]], "m": "Los vecinos se van acercando."}, {"t": "13–19 s", "w": "hn", "s": "Los vecinos llegan con sus cosas", "a": "Doña Tencha mete en el muñeco un recibo de la luz. Justo cuando lo dice, se apagan todas las luces del barrio y vuelven a encenderse.", "d": [["Doña Tencha", "¡Aquí van los apagones!"]], "m": "Chiste: apagón real de un segundo. Todos se ríen."}, {"t": "19–25 s", "w": "hn", "s": "Los vecinos llegan con sus cosas", "a": "Kevin, un cipote de 10 años, le mete un cuaderno lleno de tachones. Don Lalo, el taxista, le mete un carrito de juguete.", "d": [["Kevin", "¡Las tareas de matemática!"], ["Don Lalo", "¡Y el tráfico del bulevar!"]], "m": "Ritmo rápido, un corte por frase."}, {"t": "25–31 s", "w": "hn", "s": "El remate", "a": "La guara saca una billetera vacía de su ala y la abre: sale volando una polilla. La mete en el muñeco con cara de alivio.", "d": [["La guara", "Y esto… ¡el andar hule!"]], "m": "Carcajada general. Guiño al Diccionario Catracho."}, {"t": "31–37 s", "w": "cold", "s": "Tradiciones · la maleta", "a": "Doña Tencha pasa corriendo con una maleta para darle la vuelta a la cuadra. La guara la sigue volando.", "d": [["La guara", "¿Y para dónde va, Doña Tencha?"], ["Doña Tencha", "¡Pa’ que este año sí viaje, mijo!"]], "m": "Música más rápida."}, {"t": "37–42 s", "w": "cold", "s": "Tradiciones · amarillo y escoba", "a": "En un tendedero se secan prendas amarillas y la guara se tapa los ojos con un ala, apenada. La abuela barre la casa hacia afuera.", "d": [["La abuela", "¡Fuera lo malo, que entre lo bueno!"]], "m": "Montaje de dos tomas."}, {"t": "42–47 s", "w": "cold", "s": "Antes de las doce", "a": "Don Chepe reparte bolsitas de uvas. Los cipotes alistan los silbadores.", "d": [["Don Chepe", "Y con cuidado con la pólvora, ¿oyeron, cipotes?"], ["Los cipotes", "¡Sí, Don Chepe!"]], "m": "Mensaje de seguridad dentro de la historia."}, {"t": "47–55 s", "w": "cold", "s": "La cuenta regresiva", "a": "Todos alrededor del muñeco, cada uno con sus 12 uvas. La guara se mete las uvas una tras otra hasta que se le inflan los cachetes.", "d": [["Todos", "¡Diez, nueve, ocho… tres, dos, uno!"], ["Todos", "¡FELIZ AÑO!"]], "m": "La guara intenta decir “¡Feliz año!” con la boca llena y le sale “¡Fhehiz añhoo!”."}, {"t": "55–62 s", "w": "hn", "s": "La quema", "a": "Don Chepe enciende el Año Viejo, a distancia segura. Suben las chispas y en el cielo revientan los cohetes. Todos aplauden.", "d": [], "m": "Momento musical: la canción sube."}, {"t": "62–70 s", "w": "hn", "s": "Los abrazos", "a": "Abrazos entre vecinos. Don Chepe se agacha y abraza a la guara.", "d": [["Don Chepe", "Feliz año, guarita. Gracias por estar con nosotros."], ["La guara", "¡Feliz año, Don Chepe!"]], "m": "El tono pasa de la risa a la ternura."}, {"t": "70–78 s", "w": "hn", "s": "En el techo", "a": "La guara, sola en el techo, mira los cohetes sobre las luces de la ciudad y los cerros. Se come la última uva y pide su deseo.", "d": [["La guara", "Que este año conozcamos más de nuestra tierra… y que nadie ande hule."]], "m": "Sonríe a cámara."}, {"t": "78–84 s", "w": "hn", "s": "Cierre", "a": "Texto: “Feliz Año Nuevo, catrachos.” y la pregunta “¿Qué querés dejar en el Año Viejo? Comentalo 👇”. Logo de Honduras Secreta.", "d": [], "m": "Golpe final de música."}];
+document.getElementById('scenes').innerHTML=S.map((x,i)=>`<article class="scene ${x.w}"><div class="tc"><b>${i+1}</b>${x.t}</div><div class="body"><p class="slug">${x.s}</p><p>${x.a}</p>${x.d.map(d=>`<div class="dlg"><b>${d[0]}</b><i>“${d[1]}”</i></div>`).join('')}<p class="meta"><span>Sonido y pantalla</span>${x.m}</p></div></article>`).join('');
+</script>
