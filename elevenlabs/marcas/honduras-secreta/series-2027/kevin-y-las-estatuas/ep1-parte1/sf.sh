@@ -1,0 +1,21 @@
+E=/home/user/Nicole-projects/elevenlabs/el.py
+ST="Stylized 3D cartoon animation like a family animated feature film, VERTICAL 9:16 portrait frame composed for a phone screen, characters large, story elements stacked top to bottom, nothing important cut at the sides. Soft rounded shapes, expressive faces. NOT realistic. No text, letters or numbers anywhere except the macaw's hat patch."
+G="the young teenage cartoon macaw exactly as in the macaw references: oversized head, big round glossy eyes, red body, yellow and blue wings used like hands, SAME beige bucket hat with the rectangular 'HONDURAS Secreta' patch facing camera"
+K="Kevin exactly as in his reference (10-year-old Honduran boy, spiky black hair, gap-tooth smile, blue long-sleeve shirt, denim shorts, sneakers)"
+R="the living stone Maya king statue exactly as in his reference (greenish-gray carved stone with moss, tall carved feathered headdress, jade ear spools, ceremonial bar, kind golden glowing eyes)"
+S="the small living stone Maya scribe statue exactly as in his reference (seated, gray stone with moss, headband, stone paintbrush and shell ink pot, big kind eyes)"
+Q="the two living stone macaw heads exactly as in their reference (carved gray-green stone macaw heads with big beaks and round cartoon eyes)"
+CP="the Maya archaeological site of Copán Ruinas, Honduras: grassy Great Plaza with tall carved stone stelae, stepped stone pyramids, big ceiba and fig trees, green hills"
+RG="ref/jose_ref.png"; RC="ref/jose_ref_close.png"
+g(){ o=$1; p=$2; shift 2; python3 $E image "$ST $p" -o p1/sf/$o.png --model gemini-3.1-flash-image --ar 9:16 --res 2K "$@" > p1/sf/$o.log 2>&1; }
+mkdir -p p1/sf
+g 01 "A humble Honduran kid's bedroom in the afternoon, colorful walls, a small desk with an open blank school notebook and pencils. $K lies on his back on the bed, bored, arms spread. In the upper part of the frame, $G has just landed on the open window sill with a mischievous smile." --ref ref/kevin_c.png --ref $RG --ref $RC &
+g 02 "Golden late afternoon at the entrance of $CP. $K walks in wearing a backpack, looking around. Above them in the upper part of the frame, in a big tree, three real wild scarlet macaws (natural, no hats); $G flies up toward them with wings open, excited." --ref ref/kevin_c.png --ref $RG --ref $RC &
+g 03 "Last golden sunbeam of sunset in the Great Plaza of $CP. In the upper and middle part of the frame, $R, standing tall like a carved stela on its stone base, just beginning to come alive: cracks of golden light, dust falling, eyes opening. In the lower part, $K looks bored at it with hands in pockets, and $G beside him." --ref ref/rey.png --ref ref/kevin_c.png --ref $RG &
+g 04 "Sunset, Great Plaza of $CP. $K hides behind $G, both looking up surprised with open mouths. In the upper part, $R towers over them, smiling kindly, bending down a little." --ref ref/rey.png --ref ref/kevin_c.png --ref $RG &
+wait
+g 05 "Dusk, $CP. $R crouches next to the famous square carved stone altar (Altar Q) that shows a row of small seated carved figures around its sides; he points at it proudly. $K kneels beside it, amazed, and $G sits on top of the altar." --ref ref/rey.png --ref ref/kevin_c.png --ref $RG &
+g 06 "Dusk, the Maya ball court of $CP: two long sloped stone walls with stone macaw-head markers on top. In the upper part of the frame, on the wall, $Q have just come alive and smile with open beaks. In the lower middle, $G looks up at them with an amazed, moved face, wings to its chest. $K and $R stand behind, smiling." --ref ref/guacas.png --ref $RG --ref ref/kevin_c.png &
+g 07 "Dusk, the Maya ball court of $CP. Dynamic action: $K in the center bumps a big dark solid rubber ball with his hip, mid-air, determined funny face. $R on the left cheers with arms up. On the wall in the upper part, $Q cheer. $G flies above excited." --ref ref/kevin_c.png --ref ref/rey.png --ref ref/guacas.png &
+g 08 "Twilight, blue hour, the Hieroglyphic Stairway of $CP: a steep wide stone staircase covered in carved Maya glyphs, softly glowing golden. In the center, on one of the steps, $S has just come alive and looks at the camera with a mysterious, wise half smile, holding his brush. In the lower part, $K and $G look up at him in awe." --ref ref/escriba.png --ref ref/kevin_c.png --ref $RG &
+wait
