@@ -39,7 +39,7 @@ S=[(0.3,8.4,"This stairway is the longest Maya text in existence:\nover two thou
    (73.6,77.1,"Excellent, Kevin!\nHow did you learn all this?"),(78.5,81.8,"Let's just say…\nthey told me in person.")]
 OV=[(0.3,4.0,title()),(42.8,46.5,place('Templo Rosalila',1720))]
 OV+=[(a,b,sub(t)) for a,b,t in S]
-OV.append((87.0,91.17,endcard()))
+OV.append((87.0,91.08,endcard()))
 OV=[(a,b,np.array(im).astype(np.float32)) for a,b,im in OV]
 dec=subprocess.Popen(['ffmpeg','-loglevel','error','-i','seg/base2.mp4','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
 enc=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r','24','-i','-','-vf','format=yuv420p','-c:v','libx264','-crf','17','video_ov.mp4'],stdin=subprocess.PIPE)
