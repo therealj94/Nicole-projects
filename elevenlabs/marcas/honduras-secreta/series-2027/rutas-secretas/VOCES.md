@@ -7,3 +7,9 @@
 - Cuadros con Seedream 5.5 y animación con Kling 4.0 en el canvas de ElevenLabs.
 - Audio en español con acento hondureño; subtítulos en inglés arriba.
 - Cada episodio cierra con “¿Cómo llegar?” sin horarios ni precios.
+
+## Ep. 2 Comayagua
+- Valentina: Denisse (JLjbyFxQ9y50fnjDTvoD) — opción B, con el tono subido 6 % (rubberband pitch=1.06).
+- Antonella: Lía — Voz Dulce Joven (anxpogu2yu4T91ajAsSp) — opción C, con el tono subido 19 % (rubberband pitch=1.19).
+- Don Chema: Arturo — Old aged, Narrator (N2HSRirbsHTZ8DE2WqjB) — opción C.
+- ElevenLabs bloquea el diseño de voces infantiles, por eso las niñas usan voces jóvenes con el tono ajustado.
