@@ -34,18 +34,18 @@ S=[(0.3,6.2,"That voice belongs to Doña Cántara. Come…\nand get ready, she t
    (14.9,16.4,"And how do they make them?"),
    (17.2,25.7,"We take the clay from the earth, shape it by hand and fire it.\nThat's how our grandmothers' grandmothers learned it."),
    (26.3,29.1,"And those beautiful drawings, Doña Cántara?"),
-   (29.7,32.6,"Every line tells something about our people."),(33.0,36.6,"And I don't mean to brag…\nbut I look gorgeous."),
-   (37.1,44.9,"This is the Guancasco. For centuries, Lenca villages\nhave visited each other with their saints and masks to make peace."),
-   (45.5,47.6,"And why do they need to make peace?"),
-   (48.5,55.2,"Because a divided people is weak. Together we take care\nof the land, the harvest and the family."),
-   (56.6,59.1,"Like when you make up with your best buddy!"),
-   (59.8,66.2,"My name is on the money so you never forget:\nthe worth of a people is in its people."),
-   (66.9,70.2,"Thank you, Lempira.\nI'm going to tell the whole world."),(72.4,74.1,"And I'll help you, kid!"),
-   (74.9,80.8,"The lempira is named after a Lenca leader who united\nthe mountain villages to defend their land."),
-   (82.2,86.1,"Excellent, Kevin!\nHow do you know so much about Lempira?"),(87.3,90.5,"Let's just say…\nhe told me himself.")]
-OV=[(0.3,3.3,title()),(6.6,10.4,place('La Campa, Lempira',1720)),(37.0,40.8,place('El Guancasco',1720))]
+   (29.7,32.8,"Every line tells something about our people."),(33.2,36.7,"And I don't mean to brag…\nbut I look gorgeous."),
+   (37.3,45.0,"This is the Guancasco. For centuries, Lenca villages\nhave visited each other with their saints and masks to make peace."),
+   (45.7,47.7,"And why do they need to make peace?"),
+   (48.7,55.3,"Because a divided people is weak. Together we take care\nof the land, the harvest and the family."),
+   (56.7,59.2,"Like when you make up with your best buddy!"),
+   (60.0,66.3,"My name is on the money so you never forget:\nthe worth of a people is in its people."),
+   (67.1,70.3,"Thank you, Lempira.\nI'm going to tell the whole world."),(72.6,74.2,"And I'll help you, kid!"),
+   (75.0,80.9,"The lempira is named after a Lenca leader who united\nthe mountain villages to defend their land."),
+   (82.5,86.4,"Excellent, Kevin!\nHow do you know so much about Lempira?"),(87.6,89.3,"He told me himself.")]
+OV=[(0.3,3.3,title()),(6.6,10.4,place('La Campa, Lempira',1720)),(37.1,40.9,place('El Guancasco',1720))]
 OV+=[(a,b,sub(t)) for a,b,t in S]
-OV.append((96.8,101.13,endcard()))
+OV.append((95.3,99.63,endcard()))
 OV=[(a,b,np.array(im).astype(np.float32)) for a,b,im in OV]
 dec=subprocess.Popen(['ffmpeg','-loglevel','error','-i','seg/base2.mp4','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
 enc=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r','24','-i','-','-vf','format=yuv420p','-c:v','libx264','-crf','17','video_ov.mp4'],stdin=subprocess.PIPE)

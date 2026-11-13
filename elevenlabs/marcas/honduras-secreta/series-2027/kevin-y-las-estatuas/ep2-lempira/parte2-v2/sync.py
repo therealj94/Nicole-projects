@@ -9,7 +9,7 @@ CFG = {
  'K2': [('vo/K2', None, (0, 9), 0.68)],
  'C2': [('vo/C2', None, (0, 9))],
  'G3': [('vo/G3', None, (0, 9))],
- 'C3': [('vo/C3', None, (0, 9))],
+ 'C3': [('vo/C3', None, (0, 9), 0.3)],
  'L4': [('vo/L4', None, (0, 9))],
  'K5': [('vo/K5', None, (0, 9), 0.36)],
  'L5': [('vo/L5', None, (0, 9))],
@@ -19,7 +19,7 @@ CFG = {
  'G8': [('vo/G8', None, (0, 9), 0.84)],
  'K9': [('vo/K9', None, (0, 9))],
  'M8': [('vo/M8', None, (0, 9), 0.48)],
- 'K10': [('vo/K10', None, (0, 9))],
+ 'K10': [('vo/K10', None, (0, 9), 0.2)],
 }
 for n in ([a for a in sys.argv[1:] if not a.startswith('--')] or CFG):
     vid = f'hd/{n}.mp4'; vj = f'tr/{n}.json'; D = dur(vid)

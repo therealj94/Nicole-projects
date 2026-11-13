@@ -9,7 +9,7 @@ def put(trk,x,t,g=1.0):
 dlg=np.zeros((L,2),np.float32); fx=np.zeros((L,2),np.float32)
 for au,t,d in tl['audio']:
     if au: put(dlg,load(au,0,d),t)
-for f,t,g in [('au/noche.mp3',0,.25),('au/magia.mp3',6.5,.4),('au/twinkle.mp3',34.0,.6),('au/procesion.mp3',36.96,.4),('au/bronce.mp3',65.0,.5),('au/escuela.mp3',74.63,.3),('au/aves.mp3',90.63,.3),('au/twinkle.mp3',93.0,.6),('au/whoosh.mp3',96.7,.5)]:
+for f,t,g in [('au/noche.mp3',0,.25),('au/magia.mp3',6.5,.4),('au/twinkle.mp3',34.0,.6),('au/procesion.mp3',37.08,.4),('au/bronce.mp3',65.1,.5),('au/escuela.mp3',74.75,.3),('au/aves.mp3',89.13,.3),('au/twinkle.mp3',91.5,.6),('au/whoosh.mp3',95.2,.5)]:
     put(fx,load(f),t,g)
 mus=np.zeros((L,2),np.float32); put(mus,load('au/musica.mp3'),0)
 env=np.abs(dlg).max(1); k=int(.05*SR); env=np.convolve(env,np.ones(k)/k,'same')

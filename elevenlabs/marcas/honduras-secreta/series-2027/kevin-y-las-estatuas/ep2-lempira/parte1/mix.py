@@ -9,8 +9,8 @@ def put(trk,x,t,g=1.0):
 dlg=np.zeros((L,2),np.float32); fx=np.zeros((L,2),np.float32)
 for au,t,d in tl['audio']:
     if au: put(dlg,load(au,0,d),t)
-put(dlg,load('vo/F.mp3'),46.5)
-for f,t,g in [('au/aleteo.mp3',6.9,.4),('au/pueblo.mp3',7.83,.35),('au/bronce.mp3',16.04,.6),('au/magia.mp3',22.4,.4),('au/viento.mp3',28.38,.3),('au/noche.mp3',34.5,.3),('au/twinkle.mp3',45.6,.6),('au/whoosh.mp3',49.2,.5)]:
+put(dlg,load('vo/F.mp3'),46.71)
+for f,t,g in [('au/aleteo.mp3',7.11,.4),('au/pueblo.mp3',8.04,.35),('au/bronce.mp3',16.25,.6),('au/magia.mp3',22.61,.4),('au/viento.mp3',28.59,.3),('au/noche.mp3',34.71,.3),('au/twinkle.mp3',45.81,.6),('au/whoosh.mp3',49.41,.5)]:
     put(fx,load(f),t,g)
 mus=np.zeros((L,2),np.float32); put(mus,load('au/musica.mp3'),0)
 env=np.abs(dlg).max(1); k=int(.05*SR); env=np.convolve(env,np.ones(k)/k,'same')
