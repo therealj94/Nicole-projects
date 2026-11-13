@@ -10,6 +10,7 @@
 - Ancestro garífuna (estatua de madera): opción C (YExhVa4bZONzeingloMX)
 - Don Tambor: opción A (wXojZ3FhzsE0AumH6Oym)
 - Abuela garífuna: opción B (Wuv1s5YTNCjL9mFJTqo4)
+- Morazán: Alejandro Durán (sKgg4MPUDBy69X7iv3fA) — voz cálida y grave latinoamericana
   Nota: ElevenLabs bloquea el diseño de voces de niños reales; se diseñó como voz juvenil de caricatura interpretada por un adulto.
 
 ## Reglas aprendidas
@@ -18,3 +19,4 @@
 - Pico sin dientes en todas las tomas donde habla la guara.
 - Desde Garífunas Parte 2: imágenes con Seedream 5.5 (máx. 2K en 9:16) y video con Kling 4.0 (1080p, 3–30 s), vía el canvas de ElevenLabs Flows; el API directo aún no acepta esos modelos.
 - Garífunas Parte 2: cuadros con Seedream 5.5 (canvas Flows); animación con Kling 4.0 solo en las tomas de Don Tambor y la guara. El resto se animó con Veo 3.1 porque el conector del canvas se cayó y los modelos ByteDance (Seedance) por API requieren aprobación de soporte de ElevenLabs.
+- Morazán (episodio 4): cuadros con Seedream 5.5 y animación completa con Kling 4.0 en el canvas de ElevenLabs. Se omitió lo de las cinco estrellas de la bandera y las fechas de la presidencia federal por no estar verificadas.
