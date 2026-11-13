@@ -17,3 +17,4 @@
 - La guara solo aparece en tomas cuyo cuadro inicial ya la muestra correcta; en el resto, prompt y negativo prohíben pájaros/loros/guacamayas.
 - Pico sin dientes en todas las tomas donde habla la guara.
 - Desde Garífunas Parte 2: imágenes con Seedream 5.5 (máx. 2K en 9:16) y video con Kling 4.0 (1080p, 3–30 s), vía el canvas de ElevenLabs Flows; el API directo aún no acepta esos modelos.
+- Garífunas Parte 2: cuadros con Seedream 5.5 (canvas Flows); animación con Kling 4.0 solo en las tomas de Don Tambor y la guara. El resto se animó con Veo 3.1 porque el conector del canvas se cayó y los modelos ByteDance (Seedance) por API requieren aprobación de soporte de ElevenLabs.
