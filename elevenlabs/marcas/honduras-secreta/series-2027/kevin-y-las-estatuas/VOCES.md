@@ -8,3 +8,8 @@
 - Lempira: Edoardo (YqZLNYWZm98oKaaLZkUA)
 - Doña Cántara: Grandma Aurora (aYQAm4rWuigkeuRA5i92)
   Nota: ElevenLabs bloquea el diseño de voces de niños reales; se diseñó como voz juvenil de caricatura interpretada por un adulto.
+
+## Reglas aprendidas
+- Guara: José latam SIN etiquetas de tono en femenino; frases no muy cortas; comparar timbre con frases anteriores (correlación espectral ≥ 0.97) antes de usar.
+- La guara solo aparece en tomas cuyo cuadro inicial ya la muestra correcta; en el resto, prompt y negativo prohíben pájaros/loros/guacamayas.
+- Pico sin dientes en todas las tomas donde habla la guara.
