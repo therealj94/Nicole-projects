@@ -13,3 +13,7 @@
 - Antonella: Lía — Voz Dulce Joven (anxpogu2yu4T91ajAsSp) — opción C, con el tono subido 19 % (rubberband pitch=1.19).
 - Don Chema: Arturo — Old aged, Narrator (N2HSRirbsHTZ8DE2WqjB) — opción C.
 - ElevenLabs bloquea el diseño de voces infantiles, por eso las niñas usan voces jóvenes con el tono ajustado.
+
+## Ep. 3 La Ceiba
+- Don Félix: Kai Caribe A (CNUU0G6gN0nD5TtwHbDS) — opción A.
+- Doña Carey (cameo): Grandma Titina (UOxKeHS7lixzgw35mtAR), la misma del episodio 1.
