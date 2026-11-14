@@ -1,0 +1,86 @@
+<title>Calendario Honduras Secreta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Agenda por meses: cuadrícula mensual a la izquierda, lista de publicaciones a la derecha; una columna en el celular */
+:root{--bg:#f6f7f4;--card:#ffffff;--fg:#1d2420;--mut:#5d6a63;--line:#dfe4df;--acc:#c8322b;
+--K:#b4552a;--R:#0f7c86;--C:#5a54b8;--S:#b2861a;--A:#2f7d3a;--E:#c8322b;
+--fd:"Bricolage Grotesque",Georgia,serif;--fb:"Figtree",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121614;--card:#1b201d;--fg:#e9eee9;--mut:#9aa69f;--line:#2c332f;--acc:#ff6b5e;--K:#e58a5c;--R:#3cc0cb;--C:#9a94ff;--S:#e3b54a;--A:#6cc979;--E:#ff6b5e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121614;--card:#1b201d;--fg:#e9eee9;--mut:#9aa69f;--line:#2c332f;--acc:#ff6b5e;--K:#e58a5c;--R:#3cc0cb;--C:#9a94ff;--S:#e3b54a;--A:#6cc979;--E:#ff6b5e;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--fb);font-size:15px;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1{font-family:var(--fd);font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0;text-wrap:balance}
+h1 span{color:var(--acc)}
+.lead{color:var(--mut);max-width:65ch;margin:8px 0 0}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.rule b{display:block;font-family:var(--fd);font-size:17px}
+.rule small{color:var(--mut)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--c);color:var(--fg);background:transparent;border-radius:999px;padding:5px 12px;font:600 13px var(--fb);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chip[aria-pressed="false"]{opacity:.4}
+.chip:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.month{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:20px;align-items:start;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:760px){.month{grid-template-columns:minmax(0,1fr)}}
+.month h2{font-family:var(--fd);font-weight:600;font-size:22px;margin:0 0 10px;text-transform:capitalize}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;font-variant-numeric:tabular-nums}
+.grid .h{font-size:11px;color:var(--mut);text-align:center;letter-spacing:.06em;text-transform:uppercase}
+.d{aspect-ratio:1;max-width:100%;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--mut)}
+.d.on{color:#fff;font-weight:700;background:var(--c)}
+.d.av{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--fg)}
+.list{display:grid;gap:10px;min-width:0}
+.it{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:10px 14px;display:grid;gap:2px}
+.it .t{font-weight:600}
+.it .w{font-variant-numeric:tabular-nums;color:var(--mut);font-size:13px}
+.it .m{font-size:13px;color:var(--fg);opacity:.85}
+.legend{font-size:13px;color:var(--mut)}
+.notes{display:grid;gap:8px;max-width:75ch}
+.notes h2{font-family:var(--fd);font-size:22px;margin:0}
+.notes li{margin-bottom:4px}
+</style>
+<div class="wrap">
+<header><h1>Calendario de publicaciones <span>Honduras Secreta</span></h1>
+<p class="lead">Del 17 de noviembre de 2026 al 12 de abril de 2027: 19 episodios de 2 partes y los 2 especiales, con 40 publicaciones en total. Cada semana sale un episodio, rotando las series para que no se repita la misma dos semanas seguidas.</p></header>
+<section class="rules">
+<div class="rule"><b>Martes · Parte 1</b><small>Reel o TikTok vertical, más la versión horizontal en YouTube.</small></div>
+<div class="rule"><b>Viernes · Parte 2</b><small>Así la gente espera la continuación durante la semana.</small></div>
+<div class="rule"><b>Lunes · Historia de avance</b><small>Historia 1 el día anterior. Historia 2 el martes y historia 3 el viernes.</small></div>
+<div class="rule"><b>Misma hora siempre</b><small>Elegir una hora fija y ajustarla con las estadísticas de la cuenta.</small></div>
+</section>
+<div class="filters" id="f"></div>
+<p class="legend">Día relleno = publicación de video. Día con borde = historia de avance.</p>
+<div id="cal" style="display:grid;gap:24px"></div>
+<section class="notes"><h2>Fechas para volver a publicar</h2><ul>
+<li><b>20 de julio:</b> Día de Lempira. Volver a subir Kevin y las estatuas, Ep. 2 Lempira.</li>
+<li><b>1 al 25 de septiembre:</b> veda de la tortuga golfina en el Golfo de Fonseca. Volver a subir La tortuga golfina.</li>
+<li><b>3 de octubre:</b> natalicio de Francisco Morazán. Volver a subir Kevin y las estatuas, Ep. 4 Morazán.</li>
+<li><b>Semana libre del 21 al 27 de diciembre:</b> solo historias, por ejemplo volver a compartir La Encomienda el 24.</li>
+</ul></section>
+</div>
+<script>
+const D=[{"p1": "2026-11-17", "p2": "2026-11-20", "s": "K", "t": "Kevin y las estatuas · Ep. 1 El Reino de Copán", "m": "Arranque fuerte: el episodio más emblemático.", "av": "2026-11-16"}, {"p1": "2026-11-24", "p2": "2026-11-27", "s": "A", "t": "Animales secretos · La tortuga golfina", "m": "En octubre y noviembre se liberan las crías en Punta Ratón: coincide con la Parte 2.", "av": "2026-11-23"}, {"p1": "2026-12-01", "p2": "2026-12-04", "s": "C", "t": "¿De qué vive mi ciudad? · San Pedro Sula", "m": "", "av": "2026-11-30"}, {"p1": "2026-12-08", "p2": "2026-12-11", "s": "S", "t": "Sabores de Honduras · Café de Marcala", "m": "Prepara La Encomienda, que también pasa en Marcala.", "av": "2026-12-07"}, {"p1": "2026-12-13", "p2": null, "s": "E", "t": "La Encomienda (especial de Navidad)", "m": "Domingo, a tiempo para la temporada de encomiendas navideñas.", "av": "2026-12-12"}, {"p1": "2026-12-15", "p2": "2026-12-18", "s": "R", "t": "Rutas Secretas · La barrera de coral de Roatán", "m": "", "av": "2026-12-14"}, {"p1": "2026-12-30", "p2": null, "s": "E", "t": "El Año Viejo (especial de fin de año)", "m": "Un día antes del 31 para que circule en la víspera.", "av": "2026-12-29"}, {"p1": "2027-01-05", "p2": "2027-01-08", "s": "C", "t": "¿De qué vive mi ciudad? · Tegucigalpa", "m": "", "av": "2027-01-04"}, {"p1": "2027-01-12", "p2": "2027-01-15", "s": "K", "t": "Kevin y las estatuas · Ep. 2 Lempira", "m": "Volver a publicar el 20 de julio, Día de Lempira.", "av": "2027-01-11"}, {"p1": "2027-01-19", "p2": "2027-01-22", "s": "S", "t": "Sabores de Honduras · La baleada", "m": "", "av": "2027-01-18"}, {"p1": "2027-01-26", "p2": "2027-01-29", "s": "A", "t": "Animales secretos · El tiburón ballena", "m": "", "av": "2027-01-25"}, {"p1": "2027-02-02", "p2": "2027-02-05", "s": "R", "t": "Rutas Secretas · La Ceiba y Cayos Cochinos", "m": "", "av": "2027-02-01"}, {"p1": "2027-02-09", "p2": "2027-02-12", "s": "C", "t": "¿De qué vive mi ciudad? · Olancho", "m": "", "av": "2027-02-08"}, {"p1": "2027-02-16", "p2": "2027-02-19", "s": "K", "t": "Kevin y las estatuas · Ep. 4 Morazán", "m": "Volver a publicar el 3 de octubre, natalicio de Morazán.", "av": "2027-02-15"}, {"p1": "2027-02-23", "p2": "2027-02-26", "s": "S", "t": "Sabores de Honduras · La sopa de caracol", "m": "", "av": "2027-02-22"}, {"p1": "2027-03-02", "p2": "2027-03-05", "s": "A", "t": "Animales secretos · El manatí", "m": "", "av": "2027-03-01"}, {"p1": "2027-03-09", "p2": "2027-03-12", "s": "C", "t": "¿De qué vive mi ciudad? · Choluteca", "m": "", "av": "2027-03-08"}, {"p1": "2027-03-16", "p2": "2027-03-19", "s": "R", "t": "Rutas Secretas · Comayagua", "m": "Justo antes de Semana Santa (21 al 28 de marzo), famosa en Comayagua.", "av": "2027-03-15"}, {"p1": "2027-03-23", "p2": "2027-03-26", "s": "S", "t": "Sabores de Honduras · Las rosquillas", "m": "Semana Santa: temporada de rosquillas en miel.", "av": "2027-03-22"}, {"p1": "2027-03-30", "p2": "2027-04-02", "s": "A", "t": "Animales secretos · El quetzal", "m": "", "av": "2027-03-29"}, {"p1": "2027-04-09", "p2": "2027-04-12", "s": "K", "t": "Kevin y las estatuas · Ep. 3 Llegan los garífunas", "m": "La Parte 2 sale el 12 de abril, aniversario de la llegada garífuna (1797).", "av": "2027-04-08"}];
+const S={K:'Kevin y las estatuas',R:'Rutas Secretas',C:'¿De qué vive mi ciudad?',S:'Sabores de Honduras',A:'Animales secretos',E:'Especiales'};
+const on=new Set(Object.keys(S));
+const p=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
+const fmt=(s,o)=>p(s).toLocaleDateString('es-HN',o||{weekday:'long',day:'numeric',month:'long'});
+const f=document.getElementById('f');
+for(const k in S){const b=document.createElement('button');b.className='chip';b.style.setProperty('--c',`var(--${k})`);b.setAttribute('aria-pressed','true');b.innerHTML=`<i></i>${S[k]}`;b.onclick=()=>{on.has(k)?on.delete(k):on.add(k);b.setAttribute('aria-pressed',on.has(k));draw()};f.append(b)}
+function draw(){const c=document.getElementById('cal');c.innerHTML='';
+ const ev=[];D.filter(e=>on.has(e.s)).forEach(e=>{ev.push({d:e.p1,e,k:e.p2?'Parte 1':'Estreno'});if(e.p2)ev.push({d:e.p2,e,k:'Parte 2'});});
+ const months=[[2026,10],[2026,11],[2027,0],[2027,1],[2027,2],[2027,3]];
+ for(const[y,m]of months){const mine=ev.filter(x=>{const d=p(x.d);return d.getFullYear()==y&&d.getMonth()==m});
+  const sec=document.createElement('section');sec.className='month';
+  const name=new Date(y,m,1).toLocaleDateString('es-HN',{month:'long',year:'numeric'});
+  let g='<div class="grid">'+['L','M','M','J','V','S','D'].map(x=>`<div class="h">${x}</div>`).join('');
+  const first=(new Date(y,m,1).getDay()+6)%7,n=new Date(y,m+1,0).getDate();
+  for(let i=0;i<first;i++)g+='<div></div>';
+  for(let d=1;d<=n;d++){const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+   const h=mine.find(x=>x.d==iso),a=D.find(e=>on.has(e.s)&&e.av==iso);
+   g+=h?`<div class="d on" style="--c:var(--${h.e.s})" title="${h.e.t} · ${h.k}">${d}</div>`:a?`<div class="d av" style="--c:var(--${a.s})" title="Historia de avance: ${a.t}">${d}</div>`:`<div class="d">${d}</div>`}
+  g+='</div>';
+  const list=mine.map(x=>`<div class="it" style="--c:var(--${x.e.s})"><span class="w">${fmt(x.d)} · ${x.k}</span><span class="t">${x.e.t}</span>${x.e.m&&x.k!='Parte 2'?`<span class="m">${x.e.m}</span>`:''}</div>`).join('')||'<p class="legend">Sin publicaciones de las series seleccionadas.</p>';
+  sec.innerHTML=`<div><h2>${name}</h2>${g}</div><div class="list">${list}</div>`;c.append(sec)}}
+draw();
+</script>
