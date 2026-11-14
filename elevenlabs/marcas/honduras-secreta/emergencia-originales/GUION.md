@@ -1,70 +1,70 @@
-# "Lo original no se copia" · Video de emergencia
+# "Lo original no se copia" · Video de emergencia (v2)
 
-**Mensaje central (lo dice Nicole):** "Cuando haces las cosas bien, es normal que intenten replicar tus ideas. Pero eso solamente es una señal de que lo estás haciendo bien y de que estás listo para cosas más grandes y mejores."
+**Idea central:** "Cuando haces las cosas bien, es normal que intenten replicar tus ideas. Pero eso solamente es una señal de que lo estás haciendo bien… y de que estás listo para cosas más grandes y mejores."
 
-**Formato:** vertical 9:16 (más una versión horizontal) · 60-75 s · español con subtítulos pequeños en inglés arriba.
-**Tono:** intro con humor seco y sarcástico (Claudio) y una guara dramática. Nicole va seria, cálida y segura, sin pelear. Cierre con humor.
-**Voces:** Claudio = CLAUDIO `5hNQxGboC72zatTcGoJN`; guara = José latam `5rpOswWClIYBLr0xKelj`; Nicole = su voz real.
+**Formato:** vertical 9:16 (más una versión horizontal) · ~70 s · español con subtítulos pequeños en inglés arriba.
+**Tono:** intro con humor seco y sarcástico, sin nombrar ni mostrar a nadie. El cierre es elegante, con un último golpe de humor.
+**Personajes:**
+- **Claudio:** zorro naranja, lentes amarillos, suéter negro con la corona verde de Monark. Voz CLAUDIO `5hNQxGboC72zatTcGoJN`. Tranquilo, seguro, humor seco.
+- **La guara:** sombrero beige con el logo de Honduras Secreta. Voz José latam `5rpOswWClIYBLr0xKelj`. Dramática y orgullosa.
+- **Nicole:** toma real, con su voz.
 
 ---
 
 ## Acto 1 · Intro animada (0-25 s)
-Escenario: el taller de Claudio en Monark (escritorio, laptop, luz ámbar), el mismo universo de *Detrás del Secreto*.
+Escenario: el taller de Claudio en Monark (escritorio, laptop, luz ámbar).
 
 | # | Toma | Diálogo |
 |---|---|---|
 | 1 | La guara entra volando a toda velocidad y frena en seco frente a cámara, despeinada. | **GUARA:** ¡Claudio! ¡Claudio! ¡EMERGENCIA! |
-| 2 | Claudio sentado, tomando café, sin despegar la vista de la laptop. | **CLAUDIO:** Si se te acabaron los mangos otra vez, no es emergencia. |
-| 3 | La guara le pone el teléfono en la cara. | **GUARA:** ¡No! ¡Hay OTRA guara! Con sombrerito… ¡y todo! |
-| 4 | Claudio levanta una ceja, lento. | **CLAUDIO:** ¿Con sombrerito? Qué… original. |
-| 5 | La guara posa ofendida, ala en la cadera. | **GUARA:** ¡Y el sombrero me queda mejor a mí! |
-| 6 | La guara baja la voz, dramática. | **GUARA:** Y dicen que también anda por ahí… un zorro naranja. |
-| 7 | Claudio deja el café, mira a cámara (rompe la cuarta pared). | **CLAUDIO:** Naranja. Qué casualidad. |
-| 8 | Claudio se recuesta, tranquilo. | **CLAUDIO:** Mirá, dicen que imitar es la forma más sincera de admirar. |
-| 9 | La guara, confundida y luego halagada. | **GUARA:** O sea… ¿nos están admirando? |
-| 10 | Claudio asiente. | **CLAUDIO:** Muchísimo. Hasta el color. |
-| 11 | La guara mira a cámara, nerviosa. | **GUARA:** ¿Y ahora qué hacemos? |
-| 12 | Claudio cierra la laptop. | **CLAUDIO:** Lo de siempre: seguir creando. Pero mejor que lo diga la jefa. |
+| 2 | Claudio en su escritorio, tomando café, sin despegar la vista de la laptop. | **CLAUDIO:** Si se te acabaron los mangos otra vez, no es emergencia. |
+| 3 | La guara le pone el teléfono en la cara. | **GUARA:** ¡No! ¡Hay OTRA guara! ¡Con sombrero vaquero… y todo! |
+| 4 | Claudio levanta una ceja, lento. | **CLAUDIO:** ¿Vaquero? Bueno… cada quien su estilo. |
+| 5 | La guara señala orgullosa el logo de su sombrero. | **GUARA:** ¡El mío tiene logo! |
+| 6 | La guara baja la voz, dramática. | **GUARA:** Y dicen que también anda por ahí… un zorro. |
+| 7 | Claudio, sin moverse. | **CLAUDIO:** ¿Naranja? |
+| 8 | La guara niega con la cabeza. | **GUARA:** No… gris. |
+| 9 | Claudio mira a cámara, seco (rompe la cuarta pared). | **CLAUDIO:** Ah. La versión en blanco y negro. |
+| 10 | Claudio se recuesta, tranquilo. | **CLAUDIO:** Mirá, dicen que imitar es la forma más sincera de admirar. |
+| 11 | La guara, confundida y luego halagada. | **GUARA:** O sea… ¿nos están admirando? |
+| 12 | Claudio cierra la laptop. | **CLAUDIO:** Muchísimo. Pero mejor que lo explique la jefa. |
 
 **Transición:** la guara vuela hacia el lente → *whoosh* → corte a Nicole.
 
-## Acto 2 · Nicole, toma real (25-60 s)
-Puede decirlo con sus palabras; esta es la base:
+## Acto 2 · Nicole sola (25-35 s)
+> **NICOLE:** Hola, soy Nicole, la creadora de Honduras Secreta. Nos hemos dado cuenta de que nuestras ideas están inspirando a otros… y ¿saben qué? Lo tomamos como una buena señal.
 
-> Hola, soy Nicole, la creadora de Honduras Secreta.
-> Nos dimos cuenta de que están intentando copiar a nuestros personajes: a la guara y a Claudio.
-> Y ¿saben qué? Lo tomamos como una buena señal.
-> **Cuando haces las cosas bien, es normal que intenten replicar tus ideas.**
-> **Pero eso solamente es una señal de que lo estás haciendo bien… y de que estás listo para cosas más grandes y mejores.**
-> Una idea se puede copiar. Lo que no se puede copiar es el corazón, el trabajo y el amor por Honduras que le ponemos a cada video.
-> Así que gracias por la inspiración. Nosotros seguimos creando.
+## Acto 3 · Los tres juntos (35-70 s)
+Claudio y la guara aparecen junto a Nicole dentro de su toma real, con un *pop* de entrada.
+Posiciones: Nicole al centro, **Claudio a su derecha (lado izquierdo de la pantalla)** sentado en la mesa y **la guara a su izquierda (lado derecho de la pantalla)** posada en la mesa o en un banquito.
 
-**En pantalla:** la frase central aparece en letras grandes mientras la dice (estilo Honduras Secreta, sin taparle la cara).
-**Música:** baja, cálida, inspiradora.
+| Quién | Diálogo | A dónde mira Nicole |
+|---|---|---|
+| **NICOLE** | Cuando haces las cosas bien, es normal que intenten replicar tus ideas. Pero eso solamente es una señal de que lo estás haciendo bien… | A cámara |
+| **CLAUDIO** | …y de que estás listo para cosas más grandes y mejores. | Gira hacia Claudio y asiente |
+| **GUARA** | Una idea se puede copiar. Lo que no se puede copiar es el corazón, el trabajo y el amor por Honduras que le ponemos a cada video. | Gira hacia la guara y sonríe orgullosa |
+| **GUARA** | ¡Originales desde el primer vuelo! | Se ríe |
+| **CLAUDIO** (seco, a cámara) | Y a los que vienen detrás… tomen nota. Les va a servir. | Mira a cámara y aguanta la risa |
 
-### Cómo grabar a Nicole
-1. Vertical, 1080p o 4K, cámara a la altura de los ojos, mirando al lente.
-2. Luz de frente (una ventana sirve) y fondo sencillo con algo de la marca (logo, cuadro o peluche de guara).
-3. Micrófono de solapa o el teléfono cerca; lugar sin eco.
-4. Dejar espacio libre al lado derecho del encuadre (para meter a la guara y a Claudio en el cierre).
-5. Hacer 2-3 tomas completas y una pausa de 1 segundo antes de la frase central.
-6. Extra: 5 segundos de Nicole sonriendo, mirando hacia su derecha como si alguien llegara, y 5 segundos de fondo vacío sin ella.
-
-## Acto 3 · Cierre (60-72 s)
-La guara aterriza en el espacio libre junto a Nicole, en la toma real (integración como en *Detrás del Secreto*). Claudio entra caminando del otro lado.
-
-| # | Diálogo |
-|---|---|
-| 13 | **GUARA:** ¡Originales desde el primer vuelo! |
-| 14 | **CLAUDIO** (a cámara, seco): Y a los que vienen detrás… tomen nota. Les va a servir. |
-| 15 | **GUARA:** ¡Literalmente! |
-
-**Tarjeta final:** logo de Honduras Secreta y Monark Brand Labs, más la frase "Lo original no se copia, se crea." / "Originals aren't copied, they're created."
+**En pantalla:** la frase central sale en letras grandes durante las líneas de Nicole y de Claudio, sin tapar caras.
+**Tarjeta final (2-3 s):** logos de Honduras Secreta y Monark Brand Labs, más "Lo original no se copia, se crea." / "Originals aren't copied, they're created."
 
 ---
 
+## Cómo grabar a Nicole (importante para que los personajes encajen)
+1. **Cámara:** vertical, 1080p o 4K, fija en trípode, a la altura de los ojos. Que no se mueva durante toda la toma.
+2. **Encuadre:** Nicole sentada al centro, en plano medio (de la cintura para arriba), detrás de una mesa. Deja espacio libre sobre la mesa a ambos lados (para Claudio y la guara).
+3. **Luz y fondo:** luz de frente, suave (una ventana sirve). Fondo sencillo con algo de la marca, sin gente moviéndose.
+4. **Audio:** micrófono de solapa o el teléfono cerca, en un lugar sin eco.
+5. **Pausas para los personajes:** decir sus líneas y dejar los silencios:
+   - Su intro (Acto 2), mirando a cámara.
+   - "Cuando haces las cosas bien… de que lo estás haciendo bien…" → **pausa de 4 s mirando hacia su derecha** (Claudio), asintiendo.
+   - **Pausa de 9 s mirando hacia su izquierda** (la guara), sonriendo.
+   - **2 s riéndose**, luego **4 s mirando a cámara aguantando la risa**.
+6. **Hacer 2-3 tomas completas.** Además: 5 s del fondo vacío, sin Nicole y con la cámara en el mismo lugar.
+7. **Referencias para la mirada:** pegar dos marcas (una calcomanía o un papelito) donde irán Claudio y la guara, a la altura de sus ojos, para que mire al punto correcto.
+
 ## Recomendaciones
-1. **No nombrar ni mostrar a quien copia** (ni su cuenta ni sus imágenes): evita un pleito, no le das visibilidad y el mensaje se ve más elegante. El sarcasmo apunta a la situación, no a una persona.
-2. **Proteger los personajes:** consultar con un abogado el registro de marca y derechos de autor de la guara, Claudio y el logo (en Honduras, ante el Instituto de la Propiedad / DIGEPIH). Guardar los archivos originales con fechas como prueba.
-3. **Publicar primero en Honduras Secreta** y compartir desde Monark Brand Labs con el texto: "Detrás de cada personaje hay un equipo real."
-4. **Copy sugerido:** "Cuando haces las cosas bien, te copian. Y está bien: significa que vas por buen camino 🦜🦊 #HondurasSecreta #Original"
+1. **No nombrar ni mostrar** a quien hizo el otro video. Las ideas y los estilos no se pueden registrar, y sus diseños son distintos (zorro gris con uniforme, guara con sombrero vaquero). Acusar de "plagio" puede volverse en contra. Además, parece ser una institución de turismo con la que conviene llevarse bien.
+2. **Proteger los personajes:** consultar con un abogado el registro de marca y derechos de autor de la guara, Claudio y el logo ante el Instituto de la Propiedad de Honduras. Guardar los archivos originales con fechas.
+3. **Copy sugerido:** "Cuando haces las cosas bien, te copian. Y está bien: significa que vas por buen camino 🦜🦊 #HondurasSecreta #Original"
