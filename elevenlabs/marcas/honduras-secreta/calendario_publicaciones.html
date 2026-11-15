@@ -42,15 +42,15 @@ h1 span{color:var(--acc)}
 </style>
 <div class="wrap">
 <header><h1>Calendario de publicaciones <span>Honduras Secreta</span></h1>
-<p class="lead">Del 17 de noviembre de 2026 al 12 de abril de 2027: 19 episodios de 2 partes y los 2 especiales, con 40 publicaciones en total. Cada semana sale un episodio, rotando las series para que no se repita la misma dos semanas seguidas.</p></header>
+<p class="lead">Del 17 de noviembre de 2026 al 12 de abril de 2027: 19 episodios de 2 partes y los 2 especiales, con 40 publicaciones en total. Ningún video está publicado todavía. Los videos salen a las 6:00 p. m. y las historias a las 9:30 a. m. Cada semana sale un episodio, rotando las series para que no se repita la misma dos semanas seguidas.</p></header>
 <section class="rules">
-<div class="rule"><b>Martes · Parte 1</b><small>Reel o TikTok vertical, más la versión horizontal en YouTube.</small></div>
-<div class="rule"><b>Viernes · Parte 2</b><small>Así la gente espera la continuación durante la semana.</small></div>
-<div class="rule"><b>Lunes · Historia de avance</b><small>Historia 1 el día anterior. Historia 2 el martes y historia 3 el viernes.</small></div>
-<div class="rule"><b>Misma hora siempre</b><small>Elegir una hora fija y ajustarla con las estadísticas de la cuenta.</small></div>
+<div class="rule"><b>Martes 6:00 p. m. · Parte 1</b><small>Reel o TikTok vertical, más la versión horizontal en YouTube.</small></div>
+<div class="rule"><b>Viernes 6:00 p. m. · Parte 2</b><small>Así la gente espera la continuación durante la semana.</small></div>
+<div class="rule"><b>Lunes 9:30 a. m. · Historia de avance</b><small>Historia 1, la víspera del estreno.</small></div>
+<div class="rule"><b>Martes y viernes 9:30 a. m. · Historias</b><small>Historia 2 (martes) e historia 3 (viernes): «hoy a las 6:00 p. m.».</small></div>
 </section>
 <div class="filters" id="f"></div>
-<p class="legend">Día relleno = publicación de video. Día con borde = historia de avance.</p>
+<p class="legend">Día relleno = publicación de video. Día con borde = historia de avance (9:30 a. m.).</p>
 <div id="cal" style="display:grid;gap:24px"></div>
 <section class="notes"><h2>Fechas para volver a publicar</h2><ul>
 <li><b>20 de julio:</b> Día de Lempira. Volver a subir Kevin y las estatuas, Ep. 2 Lempira.</li>
@@ -80,7 +80,7 @@ function draw(){const c=document.getElementById('cal');c.innerHTML='';
    const h=mine.find(x=>x.d==iso),a=D.find(e=>on.has(e.s)&&e.av==iso);
    g+=h?`<div class="d on" style="--c:var(--${h.e.s})" title="${h.e.t} · ${h.k}">${d}</div>`:a?`<div class="d av" style="--c:var(--${a.s})" title="Historia de avance: ${a.t}">${d}</div>`:`<div class="d">${d}</div>`}
   g+='</div>';
-  const list=mine.map(x=>`<div class="it" style="--c:var(--${x.e.s})"><span class="w">${fmt(x.d)} · ${x.k}</span><span class="t">${x.e.t}</span>${x.e.m&&x.k!='Parte 2'?`<span class="m">${x.e.m}</span>`:''}</div>`).join('')||'<p class="legend">Sin publicaciones de las series seleccionadas.</p>';
+  const list=mine.map(x=>`<div class="it" style="--c:var(--${x.e.s})"><span class="w">${fmt(x.d)} · 6:00 p. m. · ${x.k}</span><span class="t">${x.e.t}</span>${x.e.m&&x.k!='Parte 2'?`<span class="m">${x.e.m}</span>`:''}</div>`).join('')||'<p class="legend">Sin publicaciones de las series seleccionadas.</p>';
   sec.innerHTML=`<div><h2>${name}</h2>${g}</div><div class="list">${list}</div>`;c.append(sec)}}
 draw();
 </script>
