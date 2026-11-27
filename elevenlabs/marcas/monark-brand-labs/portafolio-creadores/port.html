@@ -1,0 +1,250 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;src:url('Montserrat[wght].ttf');font-weight:100 900}
+@font-face{font-family:P;src:url('PlayfairDisplay[wght].ttf');font-weight:400 900}
+@font-face{font-family:P;font-style:italic;src:url('PlayfairDisplay-Italic[wght].ttf');font-weight:400 900}
+@page{size:13.333in 7.5in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:M,sans-serif;color:#2b2a33}
+.pg{width:13.333in;height:7.5in;position:relative;overflow:hidden;page-break-after:always;background:var(--bg);--bg:#E9EAFB;--ac:#C7CEFA;--dk:#5B5FC7}
+.l{--bg:#E4F1EA;--ac:#B9DECB;--dk:#2F7A5A}
+.top{position:absolute;top:0;left:0;right:0;height:.95in;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 .55in}
+.top .who{font:600 11pt M;letter-spacing:4px;text-transform:uppercase;color:var(--dk)}
+.top .sec{font:800 24pt M;letter-spacing:7px}
+.in{position:absolute;top:1.3in;left:.6in;right:.6in;bottom:.5in}
+h2{font:800 17pt M;letter-spacing:6px;text-transform:uppercase;margin-bottom:.25in}
+.circles{display:flex;gap:.35in}
+.c{width:1.75in;text-align:center}
+.c .b{width:1.6in;height:1.6in;border-radius:50%;background:var(--ac);display:flex;align-items:center;justify-content:center;font:700 25pt M;margin:0 auto .12in}
+.c .t{font:400 11pt M;line-height:1.35;letter-spacing:.5px}
+.grid{display:grid;gap:.2in}
+.card{background:#fff;border-radius:16px;padding:.18in .22in;box-shadow:0 2px 0 rgba(0,0,0,.04)}
+.card .k{font:500 9.5pt M;color:#6b6a75;letter-spacing:.5px}
+.card .v{font:800 22pt M;margin-top:.03in}
+.card .s{font:600 9pt M;color:var(--dk);margin-top:.02in}
+.bar{margin:.07in 0}
+.bar .r{display:flex;justify-content:space-between;font:500 10pt M}
+.bar .t{height:9px;border-radius:5px;background:#eceaf2;margin-top:3px}
+.bar .f{height:9px;border-radius:5px;background:var(--dk)}
+.ct{font:700 11.5pt M;margin-bottom:.08in;letter-spacing:.5px}
+.note{position:absolute;bottom:.25in;left:.6in;font:italic 9.5pt M;color:#6b6a75}
+.donut{width:1.7in;height:1.7in;border-radius:50%;margin:.05in auto .12in;position:relative}
+.donut::after{content:'';position:absolute;inset:.42in;background:#fff;border-radius:50%}
+.lg{font:500 10pt M;text-align:center;line-height:1.5}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.thumbs{display:flex;gap:.16in}
+.th{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.th img{display:block;height:100%;width:100%;object-fit:cover}
+p.body{font:400 12.5pt M;line-height:1.6;margin-bottom:.14in}
+.tag{display:inline-block;background:var(--ac);border-radius:30px;padding:.05in .16in;font:600 10pt M;margin:0 .06in .08in 0}
+.net{display:flex;gap:.15in;align-items:center;margin-bottom:.14in}
+.net .ic{width:.52in;height:.52in;border-radius:12px;background:var(--ac);display:flex;align-items:center;justify-content:center;font:800 13pt M;color:var(--dk)}
+.net b{font:700 11.5pt M;display:block}.net span{font:400 10.5pt M;color:#55545e}
+</style></head><body>
+
+<!-- PORTADA -->
+<section class="pg" style="background:linear-gradient(120deg,#E9EAFB 0 50%,#E4F1EA 50% 100%)">
+ <div style="position:absolute;top:.75in;left:0;right:0;text-align:center">
+  <div style="font:600 12pt M;letter-spacing:8px;color:#55545e">PORTAFOLIO DE CREADORES</div>
+  <div style="font:italic 700 40pt P;margin-top:.12in">Contenido que conecta</div>
+ </div>
+ <div style="position:absolute;top:2.35in;left:1.1in;width:4.9in;text-align:center">
+  <div style="width:2.7in;height:2.7in;border-radius:50%;overflow:hidden;margin:0 auto;border:6px solid #fff;background:#fff"><img src="img/kass_ilus.jpg" style="width:100%;height:100%;object-fit:cover;object-position:30% 20%"></div>
+  <div style="font:800 21pt M;letter-spacing:3px;margin-top:.2in">KASSANDRA MAYORGA</div>
+  <div style="font:500 12pt M;color:#5B5FC7;margin-top:.06in">Lifestyle · Food content · Dirección creativa</div>
+ </div>
+ <div style="position:absolute;top:2.35in;right:1.1in;width:4.9in;text-align:center">
+  <div style="width:2.7in;height:2.7in;border-radius:50%;overflow:hidden;margin:0 auto;border:6px solid #fff"><img src="img/l_pp.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+  <div style="font:800 21pt M;letter-spacing:3px;margin-top:.2in">LENYN REYES</div>
+  <div style="font:500 12pt M;color:#2F7A5A;margin-top:.06in">Viajes · Aventura · Tomas con drone</div>
+ </div>
+</section>
+
+<!-- KASSANDRA PERFIL -->
+<section class="pg">
+ <img src="img/kass_ilus.jpg" style="position:absolute;left:0;top:0;height:100%;width:5.4in;object-fit:cover;object-position:30% 0">
+ <div style="position:absolute;left:6in;right:1.2in;top:.75in">
+  <div style="font:700 21pt M">Creadora de Contenido &amp; Directora Creativa</div>
+  <div style="font:400 15pt M;color:#55545e;margin:.04in 0 .25in">Estrategia, lifestyle y food content</div>
+  <p class="body">Se dedica a la creación de contenido estratégico y creativo para marcas de lifestyle y gastronomía, ayudándolas a conectar con su audiencia a través de redes sociales.</p>
+  <p class="body">Con más de 6 años como creadora de contenido independiente, actualmente es Directora Creativa de su propio estudio, donde desarrolla contenido, campañas y estrategias digitales enfocadas en resultados reales.</p>
+  <h2 style="font-size:13pt;margin:.3in 0 .18in">Redes sociales</h2>
+  <div class="net"><div class="ic">IG</div><div><b>@kassandramayorga · 14.4K seguidores</b><span>Reels, carruseles creativos, lifestyle y food content</span></div></div>
+  <div class="net"><div class="ic">TT</div><div><b>@kassandramayorga · 3.7K seguidores</b><span>Contenido orgánico, vlogs, trends y storytelling</span></div></div>
+ </div>
+ <div style="position:absolute;right:0;top:0;bottom:0;width:.8in;background:var(--ac);display:flex;align-items:center;justify-content:center"><div style="transform:rotate(90deg);white-space:nowrap;font:800 17pt M;letter-spacing:6px">@KASSANDRAMAYORGA</div></div>
+</section>
+
+<!-- KASSANDRA INSTAGRAM -->
+<section class="pg">
+ <div class="top"><div class="who">Kassandra Mayorga</div><div class="sec">Instagram · red principal</div></div>
+ <div class="in">
+  <h2>Estadísticas · últimos 90 días</h2>
+  <div style="display:flex;gap:.5in;align-items:flex-start">
+   <div class="circles">
+    <div class="c"><div class="b">1.25M</div><div class="t">visualizaciones</div></div>
+    <div class="c"><div class="b">379K</div><div class="t">espectadores</div></div>
+    <div class="c"><div class="b">9.3K</div><div class="t">visitas al perfil</div></div>
+   </div>
+   <div class="grid" style="grid-template-columns:1fr 1fr;flex:1">
+    <div class="card"><div class="k">Seguidores</div><div class="v">14,437</div></div>
+    <div class="card"><div class="k">Interacciones</div><div class="v">13,614</div></div>
+    <div class="card" style="grid-column:span 2"><div class="k">Origen de las interacciones</div>
+     <div class="bar"><div class="r"><span>Seguidores</span><b>81.4%</b></div><div class="t"><div class="f" style="width:81.4%"></div></div></div>
+     <div class="bar"><div class="r"><span>No seguidores</span><b>18.6%</b></div><div class="t"><div class="f" style="width:18.6%"></div></div></div></div>
+   </div>
+  </div>
+ </div>
+ <div class="note">Fuente: estadísticas de Instagram, periodo de 90 días.</div>
+</section>
+
+<!-- KASSANDRA AUDIENCIA -->
+<section class="pg">
+ <div class="top"><div class="who">Kassandra Mayorga</div><div class="sec">Audiencia</div></div>
+ <div class="in">
+  <p class="body" style="font-size:12pt;margin-bottom:.22in">Su comunidad está compuesta principalmente por mujeres interesadas en un estilo de vida balanceado, creativo y positivo. Conectan con contenido auténtico sobre redes sociales, lifestyle, gastronomía y recomendaciones reales de productos y servicios.</p>
+  <div class="grid" style="grid-template-columns:1.05fr 1.2fr 1.2fr 1.2fr">
+   <div class="card"><div class="ct">Género</div><div class="donut" style="background:conic-gradient(#5B5FC7 0 80.2%,#2b2a33 80.2% 100%)"></div>
+    <div class="lg"><i style="background:#5B5FC7"></i>Mujeres 80.2%<br><i style="background:#2b2a33"></i>Hombres 19.8%</div></div>
+   <div class="card"><div class="ct">Edad</div>
+    <div class="bar"><div class="r"><span>18–24</span><b>6.0%</b></div><div class="t"><div class="f" style="width:6%"></div></div></div>
+    <div class="bar"><div class="r"><span>25–34</span><b>57.8%</b></div><div class="t"><div class="f" style="width:57.8%"></div></div></div>
+    <div class="bar"><div class="r"><span>35–44</span><b>25.3%</b></div><div class="t"><div class="f" style="width:25.3%"></div></div></div>
+    <div class="bar"><div class="r"><span>45–54</span><b>7.0%</b></div><div class="t"><div class="f" style="width:7%"></div></div></div>
+    <div class="bar"><div class="r"><span>55+</span><b>3.8%</b></div><div class="t"><div class="f" style="width:3.8%"></div></div></div></div>
+   <div class="card"><div class="ct">Países</div>
+    <div class="bar"><div class="r"><span>Honduras</span><b>69.0%</b></div><div class="t"><div class="f" style="width:69%"></div></div></div>
+    <div class="bar"><div class="r"><span>Estados Unidos</span><b>10.8%</b></div><div class="t"><div class="f" style="width:10.8%"></div></div></div>
+    <div class="bar"><div class="r"><span>México</span><b>3.6%</b></div><div class="t"><div class="f" style="width:3.6%"></div></div></div>
+    <div class="bar"><div class="r"><span>España</span><b>2.5%</b></div><div class="t"><div class="f" style="width:2.5%"></div></div></div>
+    <div class="bar"><div class="r"><span>Colombia</span><b>1.7%</b></div><div class="t"><div class="f" style="width:1.7%"></div></div></div></div>
+   <div class="card"><div class="ct">Ciudades</div>
+    <div class="bar"><div class="r"><span>San Pedro Sula</span><b>28.9%</b></div><div class="t"><div class="f" style="width:28.9%"></div></div></div>
+    <div class="bar"><div class="r"><span>Tegucigalpa</span><b>19.2%</b></div><div class="t"><div class="f" style="width:19.2%"></div></div></div>
+    <div class="bar"><div class="r"><span>La Ceiba</span><b>1.6%</b></div><div class="t"><div class="f" style="width:1.6%"></div></div></div>
+    <div class="bar"><div class="r"><span>Choloma</span><b>1.4%</b></div><div class="t"><div class="f" style="width:1.4%"></div></div></div>
+    <div class="bar"><div class="r"><span>El Progreso</span><b>1.0%</b></div><div class="t"><div class="f" style="width:1%"></div></div></div></div>
+  </div>
+  <div style="margin-top:.2in;font:500 11pt M">Idiomas: <b>español 90.4%</b> · inglés 8.7%</div>
+ </div>
+ <div class="note">Fuente: estadísticas de Instagram, últimos 90 días.</div>
+</section>
+
+<!-- KASSANDRA TIKTOK -->
+<section class="pg">
+ <div class="top"><div class="who">Kassandra Mayorga</div><div class="sec">TikTok · red secundaria</div></div>
+ <div class="in">
+  <h2>Estadísticas · 28 días</h2>
+  <div style="display:flex;gap:.3in">
+   <div class="grid" style="grid-template-columns:repeat(4,1fr);flex:3">
+    <div class="card"><div class="k">Visualizaciones</div><div class="v">33K</div><div class="s">+83.6%</div></div>
+    <div class="card"><div class="k">Espectadores</div><div class="v">19K</div><div class="s">+50.7%</div></div>
+    <div class="card"><div class="k">Espectadores nuevos</div><div class="v">11K</div><div class="s">+43.6%</div></div>
+    <div class="card"><div class="k">Seguidores</div><div class="v">3,677</div></div>
+    <div class="card"><div class="k">Me gusta</div><div class="v">1,671</div><div class="s">+164%</div></div>
+    <div class="card"><div class="k">Comentarios</div><div class="v">143</div></div>
+    <div class="card"><div class="k">Compartidos</div><div class="v">170</div><div class="s">+95.4%</div></div>
+    <div class="card"><div class="k">Visitas al perfil</div><div class="v">463</div><div class="s">+130.5%</div></div>
+   </div>
+   <div class="card" style="flex:1.1"><div class="ct">Género</div><div class="donut" style="background:conic-gradient(#5B5FC7 0 69%,#2b2a33 69% 100%)"></div>
+    <div class="lg"><i style="background:#5B5FC7"></i>Mujeres 69%<br><i style="background:#2b2a33"></i>Hombres 31%</div></div>
+  </div>
+  <div class="card" style="margin-top:.22in;width:60%"><div class="ct">Fuente de tráfico</div>
+   <div class="bar"><div class="r"><span>Búsqueda</span><b>48.1%</b></div><div class="t"><div class="f" style="width:48.1%"></div></div></div>
+   <div class="bar"><div class="r"><span>Para ti</span><b>44.4%</b></div><div class="t"><div class="f" style="width:44.4%"></div></div></div>
+   <div class="bar"><div class="r"><span>Perfil personal</span><b>5.9%</b></div><div class="t"><div class="f" style="width:5.9%"></div></div></div></div>
+ </div>
+ <div class="note">Fuente: estadísticas de TikTok, periodo de 28 días (8 ene – 4 feb).</div>
+</section>
+
+<!-- LENYN PERFIL -->
+<section class="pg l">
+ <div style="position:absolute;left:.6in;top:.75in;width:5.6in">
+  <div style="display:flex;align-items:center;gap:.25in;margin-bottom:.3in">
+   <img src="img/l_pp.jpg" style="width:1.35in;height:1.35in;border-radius:50%;object-fit:cover;border:5px solid #fff">
+   <div><div style="font:800 25pt M;letter-spacing:2px">LENYN REYES</div><div style="font:500 13pt M;color:#2F7A5A">Creador digital · “De Ruta con Lenyn”</div></div>
+  </div>
+  <p class="body">Creador de contenido de viajes enfocado en descubrir Honduras: aventuras, camping, naturaleza y vida de mochilero, con tomas aéreas con drone.</p>
+  <p class="body">También ha documentado viajes por Ecuador, Costa Rica, Perú y El Salvador.</p>
+  <div style="margin:.1in 0 .25in"><span class="tag">Viajes</span><span class="tag">Aventura</span><span class="tag">Drone</span><span class="tag">Camping</span><span class="tag">Naturaleza</span></div>
+  <div class="net"><div class="ic">TT</div><div><b>@derutaconlenyn · 8,196 seguidores</b><span>543.7K me gusta en total</span></div></div>
+  <div class="net"><div class="ic">IG</div><div><b>@lenynreye · 2,308 seguidores</b><span>351 publicaciones</span></div></div>
+ </div>
+ <div class="thumbs" style="position:absolute;right:.6in;top:.75in;height:6in">
+  <div class="th" style="width:1.85in;height:3.3in;margin-top:1.2in"><img src="img/l_ig1.jpg"></div>
+  <div class="th" style="width:1.85in;height:3.3in"><img src="img/l_tt1.jpg"></div>
+  <div class="th" style="width:1.85in;height:3.3in;margin-top:.6in"><img src="img/l_ig2.jpg"></div>
+ </div>
+</section>
+
+<!-- LENYN TIKTOK -->
+<section class="pg l">
+ <div class="top"><div class="who">Lenyn Reyes</div><div class="sec">TikTok · red principal</div></div>
+ <div class="in">
+  <h2>Estadísticas · últimos 7 días (19–25 nov)</h2>
+  <div style="display:flex;gap:.3in">
+   <div class="grid" style="grid-template-columns:repeat(3,1fr);flex:2.2">
+    <div class="card"><div class="k">Visualizaciones</div><div class="v">300.3K</div><div class="s">+495.8%</div></div>
+    <div class="card"><div class="k">Espectadores</div><div class="v">237.7K</div><div class="s">+979.4%</div></div>
+    <div class="card"><div class="k">Espectadores nuevos</div><div class="v">100.9K</div></div>
+    <div class="card"><div class="k">Me gusta</div><div class="v">39.6K</div><div class="s">+682.8%</div></div>
+    <div class="card"><div class="k">Compartidos</div><div class="v">3.3K</div><div class="s">+587.2%</div></div>
+    <div class="card"><div class="k">Visitas al perfil</div><div class="v">1.6K</div><div class="s">+428.4%</div></div>
+   </div>
+   <div class="card" style="flex:1"><div class="ct">Género</div><div class="donut" style="background:conic-gradient(#2F7A5A 0 60%,#2b2a33 60% 99%,#ddd 99% 100%)"></div>
+    <div class="lg"><i style="background:#2F7A5A"></i>Mujeres 60%<br><i style="background:#2b2a33"></i>Hombres 39%</div>
+    <div style="font:600 10pt M;text-align:center;margin-top:.12in">89.5% del tráfico llega por <b>Para ti</b></div></div>
+  </div>
+  <div style="display:flex;align-items:flex-end;gap:.2in;margin-top:.25in">
+   <div style="font:700 11.5pt M;width:1.6in;line-height:1.4">Videos más vistos</div>
+   <div class="th" style="width:1.05in;height:1.4in"><img src="img/l_tt1.jpg"></div>
+   <div class="th" style="width:1.05in;height:1.4in"><img src="img/l_tt2.jpg"></div>
+   <div class="th" style="width:1.05in;height:1.4in"><img src="img/l_tt3.jpg"></div>
+   <div style="font:500 10.5pt M;line-height:1.5;margin-left:.15in">996.7K · 452.1K · 268K reproducciones</div>
+  </div>
+ </div>
+ <div class="note">Fuente: estadísticas de TikTok (@derutaconlenyn).</div>
+</section>
+
+<!-- LENYN INSTAGRAM -->
+<section class="pg l">
+ <div class="top"><div class="who">Lenyn Reyes</div><div class="sec">Instagram</div></div>
+ <div class="in">
+  <h2>Estadísticas · últimos 30 días</h2>
+  <div style="display:flex;gap:.45in">
+   <div style="flex:1.3">
+    <div class="circles" style="margin-bottom:.3in">
+     <div class="c"><div class="b">251K</div><div class="t">reproducciones<br><b style="color:#2F7A5A">+303.4%</b></div></div>
+     <div class="c"><div class="b">51.2K</div><div class="t">espectadores<br><b style="color:#2F7A5A">+78.7%</b></div></div>
+     <div class="c"><div class="b">+149</div><div class="t">seguidores nuevos<br><b style="color:#2F7A5A">+7.1%</b></div></div>
+    </div>
+    <div class="card"><div class="ct">Visualizaciones por tipo de contenido</div>
+     <div class="bar"><div class="r"><span>Reels</span><b>202K</b></div><div class="t"><div class="f" style="width:80%"></div></div></div>
+     <div class="bar"><div class="r"><span>Publicaciones</span><b>35K</b></div><div class="t"><div class="f" style="width:14%"></div></div></div>
+     <div class="bar"><div class="r"><span>Historias</span><b>15K</b></div><div class="t"><div class="f" style="width:6%"></div></div></div></div>
+   </div>
+   <div class="thumbs" style="flex:1;height:3.6in">
+    <div class="th" style="width:1.9in"><img src="img/l_ig1.jpg"></div>
+    <div class="th" style="width:1.9in"><img src="img/l_ig3.jpg"></div>
+   </div>
+  </div>
+ </div>
+ <div class="note">Fuente: estadísticas de Instagram (@lenynreye), 27 oct – 25 nov.</div>
+</section>
+
+<!-- CIERRE -->
+<section class="pg" style="background:linear-gradient(120deg,#E9EAFB 0 50%,#E4F1EA 50% 100%)">
+ <div style="position:absolute;top:1.5in;left:0;right:0;text-align:center">
+  <div style="font:italic 700 38pt P">Trabajemos juntos</div>
+  <div style="font:500 13pt M;color:#55545e;margin-top:.15in">Contenido auténtico para marcas que quieren conectar con Honduras y su gente.</div>
+ </div>
+ <div style="position:absolute;top:3.6in;left:1.3in;width:4.6in;text-align:center">
+  <div style="font:800 17pt M;letter-spacing:3px">KASSANDRA MAYORGA</div>
+  <div style="font:500 12pt M;margin-top:.12in;line-height:1.8">Instagram · TikTok<br><b>@kassandramayorga</b></div>
+ </div>
+ <div style="position:absolute;top:3.6in;right:1.3in;width:4.6in;text-align:center">
+  <div style="font:800 17pt M;letter-spacing:3px">LENYN REYES</div>
+  <div style="font:500 12pt M;margin-top:.12in;line-height:1.8">TikTok <b>@derutaconlenyn</b><br>Instagram <b>@lenynreye</b></div>
+ </div>
+</section>
+</body></html>
