@@ -1,0 +1,181 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;src:url('Montserrat[wght].ttf');font-weight:100 900}
+@font-face{font-family:P;src:url('PlayfairDisplay[wght].ttf');font-weight:400 900}
+@font-face{font-family:P;font-style:italic;src:url('PlayfairDisplay-Italic[wght].ttf');font-weight:400 900}
+@page{size:13.333in 7.5in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:M,sans-serif;color:#1d2140}
+:root{--nv:#1F3A8A;--cr:#FFF8EA;--am:#FFC93C;--rj:#E2483D;--vd:#2E9E6A;--az:#2F86B8}
+.pg{width:13.333in;height:7.5in;position:relative;overflow:hidden;page-break-after:always;background:var(--cr)}
+.stripe{position:absolute;left:0;right:0;bottom:0;height:.14in;background:linear-gradient(90deg,#2E9E6A 0 20%,#2F86B8 20% 40%,#8E44AD 40% 60%,#E2483D 60% 80%,#FFC93C 80%)}
+.top{position:absolute;top:0;left:0;right:0;height:1in;background:var(--nv);display:flex;align-items:center;justify-content:space-between;padding:0 .55in}
+.top img{height:.62in;background:#fff;border-radius:12px;padding:.05in .12in}
+.top .sec{font:800 23pt M;letter-spacing:6px;color:#fff;text-transform:uppercase}
+.in{position:absolute;top:1.35in;left:.6in;right:.6in;bottom:.45in}
+h2{font:800 15pt M;letter-spacing:5px;text-transform:uppercase;margin-bottom:.22in;color:var(--nv)}
+.grid{display:grid;gap:.18in}
+.card{background:#fff;border-radius:18px;padding:.17in .22in;box-shadow:0 3px 0 #ecdcb8}
+.card .k{font:600 9.5pt M;color:#6b6a75;letter-spacing:.4px}
+.card .v{font:800 23pt M;margin-top:.03in;color:var(--nv)}
+.card .s{font:700 9.5pt M;color:var(--vd);margin-top:.02in}
+.big{background:var(--nv);color:#fff}.big .k{color:#c9d4ff}.big .v{color:#fff;font-size:30pt}.big .s{color:var(--am)}
+.bar{margin:.065in 0}
+.bar .r{display:flex;justify-content:space-between;font:500 10pt M}
+.bar .t{height:9px;border-radius:5px;background:#f1eadb;margin-top:3px}
+.bar .f{height:9px;border-radius:5px;background:var(--c,var(--rj))}
+.ct{font:800 11.5pt M;margin-bottom:.08in;color:var(--nv)}
+.note{position:absolute;bottom:.25in;left:.6in;font:italic 9.5pt M;color:#7a7466}
+.donut{width:1.65in;height:1.65in;border-radius:50%;margin:.05in auto .12in;position:relative}
+.donut::after{content:'';position:absolute;inset:.42in;background:#fff;border-radius:50%}
+.lg{font:500 10pt M;text-align:center;line-height:1.55}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.guara{position:absolute;filter:drop-shadow(0 10px 14px rgba(0,0,0,.18))}
+.bubble{position:absolute;background:#fff;border:3px solid var(--nv);border-radius:20px;padding:.1in .18in;font:700 12pt M;color:var(--nv)}
+.tag{display:inline-block;border-radius:30px;padding:.06in .18in;font:700 10.5pt M;margin:0 .07in .1in 0;color:#fff}
+.th{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.13)}
+.th img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.th div{font:700 11pt M;padding:.08in .14in;color:var(--nv)}
+p.body{font:400 13pt M;line-height:1.6;margin-bottom:.15in}
+</style></head><body>
+
+<!-- 1 PORTADA -->
+<section class="pg" style="background:radial-gradient(circle at 70% 40%,#fff 0,#FFF8EA 45%,#FCEBC4 100%)">
+ <img src="img/logo.png" style="position:absolute;left:.8in;top:1.35in;width:6.4in">
+ <div style="position:absolute;left:.85in;top:4.4in">
+  <div style="font:800 14pt M;letter-spacing:8px;color:var(--nv)">KIT DE MEDIOS · 2026</div>
+  <div style="font:italic 700 26pt P;margin-top:.12in;color:#1d2140">Contenido que hace sentir orgullo catracho</div>
+ </div>
+ <img class="guara" src="img/g3.png" style="right:.4in;top:.6in;width:5.6in">
+ <div class="stripe"></div>
+</section>
+
+<!-- 2 QUIÉNES SOMOS -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">¿Quiénes somos?</div></div>
+ <div class="in" style="right:5.1in">
+  <p class="body" style="font-size:14pt"><b>Honduras Secreta</b> es una marca de contenido que muestra lo mejor de Honduras: sus ciudades, sabores, animales, símbolos, historia y rutas, contados con personajes animados que conectan con grandes y chicos.</p>
+  <p class="body">Nuestra anfitriona es <b>la guara</b>, el ave nacional de Honduras, que acompaña a la audiencia en cada aventura junto a Kevin y otros personajes.</p>
+  <h2 style="margin-top:.25in">Nuestras series</h2>
+  <div><span class="tag" style="background:#2F86B8">Ciudades</span><span class="tag" style="background:#E2483D">Sabores</span><span class="tag" style="background:#2E9E6A">Animales secretos</span><span class="tag" style="background:#1F3A8A">Símbolos nacionales</span><span class="tag" style="background:#8E44AD">Kevin y las estatuas</span><span class="tag" style="background:#d39a12">Rutas Secretas</span></div>
+ </div>
+ <img class="guara" src="img/g1.png" style="right:.5in;bottom:.35in;height:5.2in">
+ <div class="bubble" style="right:4.1in;top:3.7in">¡Hola, catrachos!</div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 3 INSTAGRAM -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">Instagram</div></div>
+ <div class="in" style="right:4.1in">
+  <h2>Estadísticas · últimos 90 días</h2>
+  <div class="grid" style="grid-template-columns:1.3fr 1fr 1fr">
+   <div class="card big" style="grid-row:span 2"><div class="k">Visualizaciones</div><div class="v">837,547</div><div class="s">+437.6% vs. periodo anterior</div>
+    <div class="k" style="margin-top:.3in">Espectadores</div><div class="v" style="font-size:24pt">253,065</div><div class="s">+4,865%</div></div>
+   <div class="card"><div class="k">Seguidores</div><div class="v">4,287</div><div class="s">+442.0%</div></div>
+   <div class="card"><div class="k">Seguidores nuevos</div><div class="v">+3,470</div></div>
+   <div class="card" style="grid-column:span 2"><div class="ct">Visualizaciones por tipo de contenido</div>
+    <div class="bar"><div class="r"><span>Reels</span><b>675K</b></div><div class="t"><div class="f" style="width:80%"></div></div></div>
+    <div class="bar"><div class="r"><span>Publicaciones</span><b>133K</b></div><div class="t"><div class="f" style="width:16%"></div></div></div>
+    <div class="bar"><div class="r"><span>Historias</span><b>29K</b></div><div class="t"><div class="f" style="width:3.5%"></div></div></div></div>
+  </div>
+ </div>
+ <img class="guara" src="img/g2.png" style="right:.35in;bottom:.4in;height:4.8in">
+ <div class="note">Fuente: estadísticas de Instagram, 29 ago – 26 nov.</div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 4 INSTAGRAM AUDIENCIA -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">Audiencia · Instagram</div></div>
+ <div class="in">
+  <div class="grid" style="grid-template-columns:1fr 1.35fr 1.35fr">
+   <div class="card"><div class="ct">Género</div><div class="donut" style="background:conic-gradient(#E2483D 0 62.5%,#1F3A8A 62.5% 100%)"></div>
+    <div class="lg"><i style="background:#E2483D"></i>Mujeres 62.5%<br><i style="background:#1F3A8A"></i>Hombres 37.5%</div></div>
+   <div class="card" style="--c:#2F86B8"><div class="ct">Edad</div>
+    <div class="bar"><div class="r"><span>13–17</span><b>1.2%</b></div><div class="t"><div class="f" style="width:1.2%"></div></div></div>
+    <div class="bar"><div class="r"><span>18–24</span><b>5.1%</b></div><div class="t"><div class="f" style="width:5.1%"></div></div></div>
+    <div class="bar"><div class="r"><span>25–34</span><b>27.3%</b></div><div class="t"><div class="f" style="width:27.3%"></div></div></div>
+    <div class="bar"><div class="r"><span>35–44</span><b>32.2%</b></div><div class="t"><div class="f" style="width:32.2%"></div></div></div>
+    <div class="bar"><div class="r"><span>45–54</span><b>22.2%</b></div><div class="t"><div class="f" style="width:22.2%"></div></div></div>
+    <div class="bar"><div class="r"><span>55–64</span><b>8.5%</b></div><div class="t"><div class="f" style="width:8.5%"></div></div></div>
+    <div class="bar"><div class="r"><span>65+</span><b>3.4%</b></div><div class="t"><div class="f" style="width:3.4%"></div></div></div></div>
+   <div class="card" style="--c:#2E9E6A"><div class="ct">Países principales</div>
+    <div class="bar"><div class="r"><span>Honduras</span><b>52.5%</b></div><div class="t"><div class="f" style="width:52.5%"></div></div></div>
+    <div class="bar"><div class="r"><span>Estados Unidos</span><b>27.6%</b></div><div class="t"><div class="f" style="width:27.6%"></div></div></div>
+    <div class="bar"><div class="r"><span>España</span><b>9.7%</b></div><div class="t"><div class="f" style="width:9.7%"></div></div></div>
+    <p style="font:500 10.5pt M;line-height:1.5;margin-top:.2in;color:#4b4a55">Casi la mitad de la audiencia vive fuera de Honduras, sobre todo en EE. UU. y España: la diáspora catracha.</p></div>
+  </div>
+ </div>
+ <div class="note">Fuente: estadísticas de Instagram, últimos 90 días.</div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 5 TIKTOK -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">TikTok</div></div>
+ <div class="in" style="right:4.2in">
+  <h2>Estadísticas · últimos 60 días</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+   <div class="card big" style="grid-column:span 2"><div class="k">Visualizaciones de videos</div><div class="v">410.9K</div><div class="s">+1,850.8% vs. periodo anterior</div></div>
+   <div class="card"><div class="k">Espectadores</div><div class="v">265.8K</div><div class="s">245.9K nuevos</div></div>
+   <div class="card"><div class="k">Me gusta</div><div class="v">39.4K</div><div class="s">+4,012%</div></div>
+   <div class="card"><div class="k">Veces compartido</div><div class="v">10.9K</div></div>
+   <div class="card"><div class="k">Comentarios</div><div class="v">4.5K</div></div>
+   <div class="card"><div class="k">Visitas al perfil</div><div class="v">3.4K</div><div class="s">+1,896.5%</div></div>
+   <div class="card" style="grid-column:span 2"><div class="k">Tráfico desde “Para ti”</div><div class="v">92.3%</div><div class="s">El algoritmo nos lleva a gente nueva</div></div>
+  </div>
+ </div>
+ <img class="guara" src="img/g3.png" style="right:.3in;top:1.6in;width:4.1in">
+ <div class="note">Fuente: estadísticas de TikTok, 28 sep – 26 nov.</div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 6 TIKTOK AUDIENCIA -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">Audiencia · TikTok</div></div>
+ <div class="in" style="right:4.6in">
+  <div class="grid" style="grid-template-columns:1fr 1.5fr">
+   <div class="card"><div class="ct">Género</div><div class="donut" style="background:conic-gradient(#E2483D 0 52%,#1F3A8A 52% 99%,#FFC93C 99% 100%)"></div>
+    <div class="lg"><i style="background:#E2483D"></i>Mujeres 52%<br><i style="background:#1F3A8A"></i>Hombres 47%<br><i style="background:#FFC93C"></i>Otro 1%</div></div>
+   <div class="card" style="--c:#2E9E6A"><div class="ct">Países principales</div>
+    <div class="bar"><div class="r"><span>Honduras</span><b>69.6%</b></div><div class="t"><div class="f" style="width:69.6%"></div></div></div>
+    <div class="bar"><div class="r"><span>El Salvador</span><b>9.7%</b></div><div class="t"><div class="f" style="width:9.7%"></div></div></div>
+    <div class="bar"><div class="r"><span>Estados Unidos</span><b>8.2%</b></div><div class="t"><div class="f" style="width:8.2%"></div></div></div>
+    <div class="bar"><div class="r"><span>España</span><b>4.3%</b></div><div class="t"><div class="f" style="width:4.3%"></div></div></div>
+    <div class="bar"><div class="r"><span>Rumania</span><b>2.1%</b></div><div class="t"><div class="f" style="width:2.1%"></div></div></div></div>
+  </div>
+ </div>
+ <img class="guara" src="img/g1.png" style="right:.4in;bottom:.4in;height:4.8in;transform:scaleX(-1)">
+ <div class="note">Fuente: estadísticas de TikTok, espectadores 28 sep – 26 nov.</div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 7 CONTENIDO -->
+<section class="pg">
+ <div class="top"><img src="img/logo.png"><div class="sec">Nuestro contenido</div></div>
+ <div class="in">
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:.22in .3in">
+   <div class="th"><img src="img/t_ciudades.jpg"><div>Ciudades</div></div>
+   <div class="th"><img src="img/t_sabores.jpg"><div>Sabores</div></div>
+   <div class="th"><img src="img/t_animales.jpg"><div>Animales secretos</div></div>
+   <div class="th"><img src="img/t_simbolos.jpg"><div>Símbolos nacionales</div></div>
+   <div class="th"><img src="img/t_kevin.jpg"><div>Kevin y las estatuas</div></div>
+   <div class="th"><img src="img/t_rutas.jpg"><div>Rutas Secretas</div></div>
+  </div>
+ </div>
+ <div class="stripe"></div>
+</section>
+
+<!-- 8 CIERRE -->
+<section class="pg" style="background:var(--nv)">
+ <img class="guara" src="img/g3.png" style="left:.5in;top:.9in;width:5.2in">
+ <div style="position:absolute;right:.8in;top:1.4in;width:6.2in;text-align:center;color:#fff">
+  <div style="font:italic 700 38pt P">Trabajemos juntos</div>
+  <div style="font:500 13.5pt M;line-height:1.6;margin-top:.2in;color:#dfe5ff">Lleva tu marca a una comunidad que ama a Honduras, dentro y fuera del país.</div>
+  <img src="img/logo.png" style="width:3.6in;background:#fff;border-radius:20px;padding:.15in .25in;margin-top:.45in">
+  <div style="font:700 15pt M;margin-top:.35in;letter-spacing:1px">Instagram <span style="color:var(--am)">@honduras.secreta</span> · TikTok</div>
+ </div>
+ <div class="stripe"></div>
+</section>
+</body></html>
